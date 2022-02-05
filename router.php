@@ -57,3 +57,5 @@ function view($path,array $dollar){
     require __DIR__.$path;
 
 }
+
+$action = $_SERVER['REQUEST_URI'].'';

@@ -1,26 +1,31 @@
 <?php
 
-require_once 'router.php';
+require_once 'loader/autoloader.php';
+require_once 'loader/viewer.php';
+$router = new Router();
 
-route('tms/', function () {
+$router->route('tms/', function () {
     return 'hello worls';
 });
 
-route('tms/home', function () {
-    require __DIR__.'/indexb.php';
+$router->route('tms/home', function () {
+    return view('/indexb.php');
 });
 
-route('tms/viewcustomers', function () {
-    require __DIR__.'/customer_info_table.php';
+$router->route('tms/viewcustomers', function () {
+    return view('/customer_info_table.php');
 });
 
-route('tms/companies/{name}/class/{clss}',function($name,$class){
+$router->route('tms/companies/{name}/class/{clss}',function($name,$class){
+    
+    return  view('/cct.php',[$name,$class]);
+});
+$router->route('tms/send',function(){
+    return view('usd.php');
 
-    return view('/cct.php',[$name,$class]);
 });
 
-$action = $_SERVER['REQUEST_URI'].'';
-dispatch($action);
+$router->launch($router->action());
 // function mylink($url)
 // {
 //     $request = $url;
