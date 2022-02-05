@@ -1,12 +1,10 @@
 
-
-
  <?php
  include 'fire.php';
 
-// //  if (isset($_GET['request'])) {
-// //      $url = $_GET['request'];
-// //      mylink($url);
+//  if (isset($_GET['request'])) {
+//      $url = $_GET['request'];
+//      mylink($url);
 //  }
 
 ?>
@@ -19,9 +17,7 @@
     <title>try 1</title>
 </head>
 <body>
-   <li <a href="/tms/home">Try</a></li>
-    <li><a href="/tms/viewcustomers">Customer table</a></li>
-    <li><a href="/tms/home">Try</a></li>
+    <a href="/home">Try</a>
     
 </body>
 </html>

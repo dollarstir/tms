@@ -547,7 +547,7 @@ require 'loader/autoloader.php';
                                                             <td> '.$row['assigned'].'</td>
                                                             <td> '.$row['hyh'].'</td>
                                                             <td> '.$row['dateadded'].'</td>
-                                                            <td> <button  class="btn btn-success"><i class="las la-eye"></i>View</button><button  title="Edit" class="btn btn-secondary"><i class="las la-edit"></i> Edit</button> <button id="'.$row['id'].'"  class="btn btn-danger delbookinfo">Delete</button>  </td>
+                                                            <td> <button  title="Edit" class="btn btn-secondary"><i class="las la-edit"></i> Edit</button> <button id="'.$row['id'].'"  class="btn btn-danger delbookinfo">Delete</button>  </td>
                                                             </tr>
                                                             
                                                             ';

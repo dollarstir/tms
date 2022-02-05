@@ -536,7 +536,7 @@ require 'loader/autoloader.php';
                                                             <td>'.$row['address'].'</td>
                                                             <td>'.$row['ename'].'</td>
                                                             <td> '.$row['econt1'].'</td>
-                                                            <td> <button  class="btn btn-success"><i class="las la-eye"></i>View</button><button  title="Edit" class="btn btn-secondary"><i class="las la-edit"></i> Edit</button> <button id="'.$row['id'].'"  class="btn btn-danger delcustomer">Delete</button>  </td>
+                                                            <td> <button  title="Edit" class="btn btn-secondary"><i class="las la-edit"></i> Edit</button> <button id="'.$row['id'].'"  class="btn btn-danger delcustomer"><i class="las la-trash"></i>Delete</button>  </td>
                                                         </tr>
                                                                
                                                                ';
