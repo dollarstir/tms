@@ -12,7 +12,6 @@
     echo $data[0].'is in class '.$data[1];
 
 
-   var_dump($_SERVER['REQUEST_URI']);
     ?>
 
 

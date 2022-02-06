@@ -183,6 +183,42 @@ echo $response = $add->insert('eventb',
 
                 break;
 
+            case "addadmin" :
+                $add = new Inser();
+                extract($_POST);
+                echo $response = $add->insert('cmd',
+                [
+                    'name'=> $name,
+                    'email' =>$email,
+                    'username' =>$username,
+                    'password'=> md5($password),
+                ],$_FILES
+            );
+                break;
+
+            case "supperlog":
+                $login = new Login();
+                extract($_POST);
+
+                if(empty($username) || empty($password)){
+                    echo 'All field must be filed';
+                }
+                else{
+                    echo $response = $login->authenticate('cmd',
+                [
+                    ['username','=',$username],
+                    ['password','=',md5($password)]
+                ],
+                "AND"
+                );
+                }
+                
+               
+                
+
+
+                break;
+
            default:
 
             break;

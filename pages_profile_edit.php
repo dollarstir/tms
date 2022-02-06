@@ -1,10 +1,16 @@
+<?php
+
+require 'loader/autoloader.php';
+$checker = new Session();
+$checker->mainchecker('/tms/login');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>TUCEE Profile Edit | TUCEE - Multipurpose Bootstrap Admin Dashboard Template </title>
+    <title>TUCEE Profile Edit  </title>
     <link rel="icon" type="image/x-icon" href="common-assets/img/favicon.ico"/>
     <!-- Common Styles Starts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -21,6 +27,10 @@
     <link href="assets/css/loader.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="common-assets/plugins/dropify/dropify.min.css">
     <link href="assets/css/pages/profile_edit.css" rel="stylesheet" type="text/css" />
+    <script src="common-assets/plugins/sweetalerts/promise-polyfill.js"></script>
+    <link href="common-assets/plugins/sweetalerts/sweetalert2.min.css" rel="stylesheet" type="text/css" />
+    <link href="common-assets/plugins/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/basic-ui/custom_sweetalert.css" rel="stylesheet" type="text/css" />
     <!-- Page Level Plugin/Style Ends -->
 </head>
 <body>
@@ -60,100 +70,8 @@
         <!--  Sidebar Starts  -->
         <div class="sidebar-wrapper sidebar-theme">
             <nav id="sidebar">
-                <div class="fixed-profile">
-                    <div class="premium-border">
-                        <img src="common-assets/img/profile-16.jpg" class="profile-avatar"/>
-                    </div>
-                    <div class="mt-3">
-                        <h6 class="text-white font-14 mb-1">Sara Smith</h6>
-                        <p class="text-white font-13 mb-0">Britannia</p>
-                    </div>
-                    <ul class="flex-row profile-option-container">
-                        <li class="option-item dropdown message-dropdown">
-                            <div class="option-link-container dropdown-toggle" id="messageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <a class="option-link dropdown-toggle">
-                                    <i class="las la-envelope"></i>
-                                </a>
-                                <div class="text-left">
-                                    <h6>Mail</h6>
-                                    <p>3 New Mails</p>
-                                </div>
-                            </div>
-                            <div class="dropdown-menu position-absolute md-container" aria-labelledby="messageDropdown">
-                                <div class="nav-drop is-notification-dropdown">
-                                    <div class="inner">
-                                        <div class="nav-drop-header">
-                                            <span class="text-black font-12 strong">3 new mails</span>
-                                            <a class="text-muted font-12" href="pages_profile_edit.html#">
-                                                Mark all read
-                                            </a>
-                                        </div>
-                                        <div class="nav-drop-body account-items pb-0">
-                                            <a class="account-item">
-                                                <div class="media">
-                                                    <div class="user-img">
-                                                        <img class="rounded-circle avatar-xs" src="common-assets/img/profile-11.jpg" alt="profile">
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <div class="">
-                                                            <h6 class="text-dark font-13 mb-0 strong">Jennifer Queen</h6>
-                                                            <p class="m-0 mt-1 font-10 text-muted">Permission Required</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a class="account-item marked-read">
-                                                <div class="media">
-                                                    <div class="user-img">
-                                                        <img class="rounded-circle avatar-xs" src="common-assets/img/profile-10.jpg" alt="profile">
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <div class="">
-                                                            <h6 class="text-dark font-13 mb-0 strong">Lara Smith</h6>
-                                                            <p class="m-0 mt-1 font-10 text-muted">Invoice needed</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a class="account-item marked-read">
-                                                <div class="media">
-                                                    <div class="user-img">
-                                                        <img class="rounded-circle avatar-xs" src="common-assets/img/profile-9.jpg" alt="profile">
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <div class="">
-                                                            <h6 class="text-dark font-13 mb-0 strong">Victoria Williamson</h6>
-                                                            <p class="m-0 mt-1 font-10 text-muted">Account need to be synced</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <hr class="account-divider">
-                                            <div class="text-center">
-                                                <a class="text-primary strong font-13" href="apps_mail.html">View All</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="option-item dropdown notification-dropdown">
-                            <a class="option-link-container" href="pages_notifications.html">
-                                <div class="option-link">
-                                    <i class="las la-bell"></i>
-                                    <div class="blink">
-                                        <div class="circle"></div>
-                                    </div>
-                                </div>
-                                <div class="text-left">
-                                    <h6>Notifications</h6>
-                                    <p>4 Unread</p>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <ul class="list-unstyled menu-categories" id="accordionExample">
+            <?php include 'leftbar.php';?>
+                <!-- <ul class="list-unstyled menu-categories" id="accordionExample">
                     <li class="menu active">
                         <a href="javascript:void(0);" id="dashboard" class="main-item dropdown-toggle">
                             <i class="las la-home"></i>
@@ -891,255 +809,15 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> -->
+                <?php include 'sidebar.php'; ?>
             </nav>
         </div>
         <!--  Sidebar Ends  -->
         <!--  Content Area Starts  -->
         <div id="content" class="main-content">
             <!--  Navbar Starts  -->
-            <div class="header-container fixed-top">
-                <header class="header navbar navbar-expand-sm">
-                    <ul class="navbar-item flex-row ml-md-0 ml-auto theme-brand">
-                        <li class="nav-item align-self-center d-md-none">
-                            <div class="d-flex flex-row align-center justify-content-center logo-area">
-                                <a href="index.php" class="nav-link pr-0 pl-1">
-                                    <img src="common-assets/img/logo.png" class="navbar-logo" alt="logo">
-                                </a>
-                                <a href="index.php" class="nav-link pr-4 d-none d-md-block"> TUCEE </a>
-                            </div>
-                        </li>
-                        <li class="nav-item align-self-center search-animated">
-                            <i class="las la-search toggle-search"></i>
-                            <form class="form-inline search-full form-inline search" action="pages_search_result.html" role="search">
-                                <div class="search-bar">
-                                    <input type="text" class="form-control search-form-control  ml-lg-auto" placeholder="Search here">
-                                </div>
-                            </form>
-                        </li>
-                        <li class="nav-item dropdown megamenu-dropdown d-none d-lg-flex">
-                            <a href="javascript:void(0);" class="nav-link dropdown-toggle d-flex align-center text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Mega Menu  <i class="las la-angle-down font-11 ml-1"></i>
-                            </a>
-                            <div class="dropdown-menu megamenu">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <h5 class="font-17 mt-0">Applications</h5>
-                                                <ul class="list-unstyled megamenu-list">
-                                                    <li class="font-15 mb-1"><a href="apps_ecommerce.html">Ecommerce</a></li>
-                                                    <li class="font-15 mb-1"><a href="apps_chat.html">Chat</a></li>
-                                                    <li class="font-15 mb-1"><a href="apps_mail.html">Email</a></li>
-                                                    <li class="font-15 mb-1"><a href="apps_file_manager.html">File Manager</a></li>
-                                                    <li class="font-15 mb-1"><a href="apps_calendar.html">Calender</a></li>
-                                                    <li class="font-15 mb-1"><a href="apps_notes.html">Notes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <h5 class="font-17 mt-0">Extra Pages</h5>
-                                                <ul class="list-unstyled megamenu-list">
-                                                    <li class="font-15 mb-1"><a href="pages_contact_us.html">Contact Us</a></li>
-                                                    <li class="font-15 mb-1"><a href="pages_faq.html">FAQ</a></li>
-                                                    <li class="font-15 mb-1"><a href="pages_helpdesk.html">Helpdesk</a></li>
-                                                    <li class="font-15 mb-1"><a href="pages_pricing_2.html">Pricing</a></li>
-                                                    <li class="font-15 mb-1"><a href="pages_search_result.html">Search Result</a></li>
-                                                    <li class="font-15 mb-1"><a href="pages_privacy_policy.html">Privacy Policy</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="p-lg-1">
-                                            <div class="row no-gutters">
-                                                <div class="col">
-                                                    <a class="dropdown-icon-item" href="pages_profile_edit.html#">
-                                                        <img src="common-assets/img/company-1.jpg" alt="slack">
-                                                        <span>Cube</span>
-                                                    </a>
-                                                </div>
-                                                <div class="col">
-                                                    <a class="dropdown-icon-item" href="pages_profile_edit.html#">
-                                                        <img src="common-assets/img/company-2.jpg" alt="Github">
-                                                        <span>HTech</span>
-                                                    </a>
-                                                </div>
-                                                <div class="col">
-                                                    <a class="dropdown-icon-item" href="pages_profile_edit.html#">
-                                                        <img src="common-assets/img/company-3.jpg" alt="dribbble">
-                                                        <span>Inovation</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="row no-gutters">
-                                                <div class="col">
-                                                    <a class="dropdown-icon-item" href="pages_profile_edit.html#">
-                                                        <img src="common-assets/img/company-4.jpg" alt="bitbucket">
-                                                        <span>Circle</span>
-                                                    </a>
-                                                </div>
-                                                <div class="col">
-                                                    <a class="dropdown-icon-item" href="pages_profile_edit.html#">
-                                                        <img src="common-assets/img/company-5.jpg" alt="dropbox">
-                                                        <span>Techno</span>
-                                                    </a>
-                                                </div>
-                                                <div class="col">
-                                                    <a class="dropdown-icon-item" href="pages_profile_edit.html#">
-                                                        <img src="common-assets/img/company-6.jpg" alt="G Suite">
-                                                        <span>T Logy</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="navbar-item flex-row ml-md-auto">
-                        <li class="nav-item dropdown fullscreen-dropdown d-none d-lg-flex">
-                            <a class="nav-link full-screen-mode" href="javascript:void(0);">
-                                <i class="las la-compress" id="fullScreenIcon"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown language-dropdown">
-                            <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="language-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="las la-language"></i>
-                            </a>
-                            <div class="dropdown-menu position-absolute" aria-labelledby="language-dropdown">
-                                <a class="dropdown-item d-flex" href="javascript:void(0);">
-                                    <img src="common-assets/img/flag/usa-flag.png" class="flag-width" alt="flag"> 
-                                    <span class="align-self-center">&nbsp;English</span>
-                                </a>
-                                <a class="dropdown-item d-flex" href="javascript:void(0);">
-                                    <img src="common-assets/img/flag/spain-flag.png" class="flag-width" alt="flag"> 
-                                    <span class="align-self-center">&nbsp;Spanish</span>
-                                </a>
-                                <a class="dropdown-item d-flex" href="javascript:void(0);">
-                                    <img src="common-assets/img/flag/france-flag.png" class="flag-width" alt="flag"> 
-                                    <span class="align-self-center">&nbsp;French</span>
-                                </a>
-                                <a class="dropdown-item d-flex" href="javascript:void(0);">
-                                    <img src="common-assets/img/flag/saudi-arabia-flag.png" class="flag-width" alt="flag"> 
-                                    <span class="align-self-center">&nbsp;Arabic</span>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown user-profile-dropdown">
-                            <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                <img src="common-assets/img/profile-16.jpg" alt="avatar">
-                            </a>
-                            <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
-                                <div class="nav-drop is-account-dropdown" >
-                                    <div class="inner">
-                                        <div class="nav-drop-header">
-                                            <span class="text-primary font-15">Welcome Admin !</span>
-                                        </div>
-                                        <div class="nav-drop-body account-items pb-0">
-                                            <a id="profile-link"  class="account-item" href="pages_profile.html">
-                                                <div class="media align-center">
-                                                    <div class="media-left">
-                                                        <div class="image">
-                                                            <img class="rounded-circle avatar-xs" src="common-assets/img/profile-16.jpg" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="media-content ml-3">
-                                                        <h6 class="font-13 mb-0 strong">Sara</h6>
-                                                        <small>Britannia</small>
-                                                    </div>
-                                                    <div class="media-right">
-                                                        <i data-feather="check"></i>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a class="account-item" href="pages_profile.html">
-                                            <div class="media align-center">
-                                                <div class="icon-wrap">
-                                                    <i class="las la-user font-20"></i>
-                                                </div>
-                                                <div class="media-content ml-3">
-                                                    <h6 class="font-13 mb-0 strong">My Account</h6>
-                                                </div>
-                                            </div>
-                                            </a>
-                                            <a class="account-item" href="pages_timeline.html">
-                                                <div class="media align-center">
-                                                    <div class="icon-wrap">
-                                                        <i class="las la-briefcase font-20"></i>
-                                                    </div>
-                                                    <div class="media-content ml-3">
-                                                        <h6 class="font-13 mb-0 strong">My Activity</h6>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a class="account-item settings">
-                                            <div class="media align-center">
-                                                <div class="icon-wrap">
-                                                    <i class="las la-cog font-20"></i>
-                                                </div>
-                                                <div class="media-content ml-3">
-                                                    <h6 class="font-13 mb-0 strong">Settings</h6>
-                                                </div>
-                                            </div>
-                                            </a>
-                                            <a class="account-item" href="auth_lock_screen_3.html">
-                                                <div class="media align-center">
-                                                    <div class="icon-wrap">
-                                                        <i class="las la-lock font-20"></i>
-                                                    </div>
-                                                    <div class="media-content ml-3">
-                                                        <h6 class="font-13 mb-0 strong">Lock Screen</h6>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <hr class="account-divider">
-                                            <a class="account-item" href="auth_login_3.html">
-                                                <div class="media align-center">
-                                                    <div class="icon-wrap">
-                                                        <i class="las la-sign-out-alt font-20"></i>
-                                                    </div>
-                                                    <div class="media-content ml-3">
-                                                        <h6 class="font-13 mb-0 strong ">Logout</h6>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="navbar-item flex-row">
-                        <li class="nav-item dropdown header-setting">
-                            <a href="javascript:void(0);" class="nav-link dropdown-toggle rightbarCollapse" data-placement="bottom">
-                                <i class="las la-sliders-h"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </header>
-            </div>
-            <!--  Navbar Ends  -->
-            <!--  Navbar Starts / Breadcrumb Area  -->
-            <div class="sub-header-container">
-                <header class="header navbar navbar-expand-sm">
-                    <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom">
-                        <i class="las la-bars"></i>
-                    </a>
-                    <ul class="navbar-nav flex-row">
-                        <li>
-                            <div class="page-header">
-                                <nav class="breadcrumb-one" aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="javascript:void(0);">Other Pages</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page"><span>Profile Edit</span></li>
-                                    </ol>
-                                </nav>
-                            </div>
-                        </li>
-                    </ul>
-                </header>
-            </div>
+            <?php include 'topbar.php';?>
             <!--  Navbar Ends / Breadcrumb Area  -->
             <!-- Main Body Starts -->
             <div class="layout-px-spacing">    
@@ -1151,8 +829,8 @@
                                     <div id="general-info" class="section general-info">
                                         <div class="info">
                                             <div class="d-flex mt-2">
-                                                <div class="profile-edit-left">
-                                                    <div class="tab-options-list">
+                                                <!-- <div class="profile-edit-left"> -->
+                                                    <!-- <div class="tab-options-list">
                                                         <div class="nav flex-column nav-pills mb-sm-0 mb-3   text-center mx-auto" id="v-border-pills-tab" role="tablist" aria-orientation="vertical">
                                                             <a class="nav-link active" id="v-border-pills-general-tab" data-toggle="pill" href="pages_profile_edit.html#v-border-pills-general" role="tab" aria-controls="v-border-pills-general" aria-selected="true"><i class="las la-info"></i> General Information</a>
                                                             <a class="nav-link  text-center" id="v-border-pills-about-tab" data-toggle="pill" href="pages_profile_edit.html#v-border-pills-about" role="tab" aria-controls="v-border-pills-about" aria-selected="false"><i class="lar la-user"></i> About</a>
@@ -1162,22 +840,22 @@
                                                             <a class="nav-link  text-center" id="v-border-pills-education-tab" data-toggle="pill" href="pages_profile_edit.html#v-border-pills-education" role="tab" aria-controls="v-border-pills-education" aria-selected="false"><i class="las la-university"></i> Education</a>
                                                             <a class="nav-link  text-center" id="v-border-pills-work-tab" data-toggle="pill" href="pages_profile_edit.html#v-border-pills-work" role="tab" aria-controls="v-border-pills-work" aria-selected="false"><i class="las la-suitcase"></i> Work Experience</a>
                                                           </div>
-                                                    </div>
-                                                    <div class="mt-3">
+                                                    </div> -->
+                                                    <!-- <div class="mt-3">
                                                         <button class="btn btn-dark btn-sm">Reset All</button>
                                                         <div class="blockui-growl-message">
                                                             <i class="flaticon-double-check"></i>&nbsp; Settings Saved Successfully
                                                         </div>
                                                         <button id="multiple-messages" class="btn btn-primary btn-sm">Save</button>
-                                                    </div>
-                                                </div>
+                                                    </div> -->
+                                                <!-- </div> -->
                                                 <div class="profile-edit-right">
                                                     <div class="tab-content" id="v-border-pills-tabContent">
                                                         <div class="tab-pane fade show active" id="v-border-pills-general" role="tabpanel" aria-labelledby="v-border-pills-general-tab">
                                                             <div class="row">
                                                                 <div class="col-xl-3 col-lg-12 col-md-12">
                                                                     <div class="upload text-center img-thumbnail">
-                                                                        <input type="file" id="input-file-max-fs" class="dropify" data-default-file="common-common-common-common-assets/img/profile-16.jpg" data-max-file-size="2M" />
+                                                                        <input type="file" id="input-file-max-fs" class="dropify" data-default-file="common-common-common-common-assets/img/profile-16.jpg" data-max-file-size="2M" name="pic"/>
                                                                         <p class="mt-2"><i class="flaticon-cloud-upload mr-1"></i> Upload Picture</p>
                                                                     </div>
                                                                 </div>
@@ -1187,115 +865,37 @@
                                                                             <div class="col-sm-6">
                                                                                 <div class="form-group">
                                                                                     <label for="fullName">Full Name</label>
-                                                                                    <input type="text" class="form-control mb-4" placeholder="Full Name" value="Sara Williamson">
+                                                                                    <input type="text" class="form-control mb-4" placeholder="Full Name" value="Sara Williamson" name="name">
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="col-sm-6">
-                                                                                <label class="dob-input spl-left">Date of Birth</label>
-                                                                                <div class="d-sm-flex d-block">
-                                                                                    <div class="form-group mr-1">
-                                                                                        <select class="form-control" >
-                                                                                          <option>Day</option>
-                                                                                          <option>1</option>
-                                                                                          <option>2</option>
-                                                                                          <option>3</option>
-                                                                                          <option>4</option>
-                                                                                          <option>5</option>
-                                                                                          <option>6</option>
-                                                                                          <option>7</option>
-                                                                                          <option>8</option>
-                                                                                          <option>9</option>
-                                                                                          <option>10</option>
-                                                                                          <option selected>11</option>
-                                                                                          <option>12</option>
-                                                                                          <option>13</option>
-                                                                                          <option>14</option>
-                                                                                          <option>15</option>
-                                                                                          <option>16</option>
-                                                                                          <option>17</option>
-                                                                                          <option>18</option>
-                                                                                          <option>19</option>
-                                                                                          <option>20</option>
-                                                                                          <option>21</option>
-                                                                                          <option>22</option>
-                                                                                          <option>23</option>
-                                                                                          <option>24</option>
-                                                                                          <option>25</option>
-                                                                                          <option>26</option>
-                                                                                          <option>27</option>
-                                                                                          <option>28</option>
-                                                                                          <option>29</option>
-                                                                                          <option>30</option>
-                                                                                        </select>
-                                                                                    </div>
-                                                                                    <div class="form-group mr-1">
-                                                                                        <select class="form-control">
-                                                                                            <option>Month</option>
-                                                                                            <option>Jan</option>
-                                                                                            <option>Feb</option>
-                                                                                            <option>Mar</option>
-                                                                                            <option>Apr</option>
-                                                                                            <option>May</option>
-                                                                                            <option>Jun</option>
-                                                                                            <option>Jul</option>
-                                                                                            <option>Aug</option>
-                                                                                            <option selected>Sep</option>
-                                                                                            <option>Oct</option>
-                                                                                            <option>Nov</option>
-                                                                                            <option>Dec</option>
-                                                                                        </select>
-                                                                                    </div>
-                                                                                    <div class="form-group mr-1">
-                                                                                        <select class="form-control">
-                                                                                          <option>Year</option>
-                                                                                          <option>2018</option>
-                                                                                          <option>2017</option>
-                                                                                          <option>2016</option>
-                                                                                          <option>2015</option>
-                                                                                          <option>2014</option>
-                                                                                          <option>2013</option>
-                                                                                          <option>2012</option>
-                                                                                          <option>2011</option>
-                                                                                          <option>2010</option>
-                                                                                          <option>2009</option>
-                                                                                          <option>2008</option>
-                                                                                          <option>2007</option>
-                                                                                          <option>2006</option>
-                                                                                          <option>2005</option>
-                                                                                          <option>2004</option>
-                                                                                          <option>2003</option>
-                                                                                          <option>2002</option>
-                                                                                          <option>2001</option>
-                                                                                          <option>2000</option>
-                                                                                          <option>1999</option>
-                                                                                          <option>1998</option>
-                                                                                          <option>1997</option>
-                                                                                          <option>1996</option>
-                                                                                          <option>1995</option>
-                                                                                          <option>1994</option>
-                                                                                          <option>1993</option>
-                                                                                          <option selected>1992</option>
-                                                                                          <option>1991</option>
-                                                                                          <option>1990</option>
-                                                                                          <option>1989</option>
-                                                                                          <option>1988</option>
-                                                                                          <option>1987</option>
-                                                                                          <option>1986</option>
-                                                                                          <option>1985</option>
-                                                                                          <option>1984</option>
-                                                                                          <option>1983</option>
-                                                                                          <option>1982</option>
-                                                                                          <option>1981</option>
-                                                                                          <option>1980</option>
-                                                                                        </select>
-                                                                                    </div>
-                                                                                </div>
+                                                                            <div class="col-md-6">
+                                                                            <div class="form-group">
+                                                                                <label for="email">Email</label>
+                                                                                <input type="text" class="form-control mb-4" placeholder="Write your email here" value="">
                                                                             </div>
+                                                                        </div> 
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group">
+                                                                                <label for="email">Username</label>
+                                                                                <input type="text" class="form-control mb-4" placeholder="Write your username here" value="" name="username">
+                                                                            </div>
+                                                                        </div> 
+
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group">
+                                                                                <label for="email">Password</label>
+                                                                                <input type="password" class="form-control mb-4" placeholder="passworde" value="" name="password">
+                                                                            </div>
+                                                                        </div> 
+                                                                            
                                                                         </div>
-                                                                        <div class="form-group">
-                                                                            <label for="profession">Profession</label>
-                                                                            <input type="text" class="form-control mb-4" placeholder="Eg. Admin" value="Data Analyst">
-                                                                        </div>
+                                                                        <div class="mt-3">
+                                                        <button class="btn btn-dark btn-sm">Reset All</button>
+                                                        <div class="blockui-growl-message">
+                                                            <i class="flaticon-double-check"></i>&nbsp; Settings Saved Successfully
+                                                        </div>
+                                                        <button id="multiple-messages" class="btn btn-primary btn-sm">Save</button>
+                                                    </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -2004,6 +1604,13 @@ Acquiring data from primary or secondary data sources and maintaining databases.
     <script src="assets/js/loader.js"></script>
     <script src="common-assets/plugins/dropify/dropify.min.js"></script>
     <script src="assets/js/pages/profile_edit.js"></script>
+    <script src="common-assets/plugins/sweetalerts/sweetalert2.min.js"></script>
+    <script src="assets/js/basicui/sweet_alerts.js"></script>
+    <!-- Page Level Plugin/Script Ends -->
+
+     <!-- php york script -->
+     <script src="processor.js"></script>
+    <!-- Page Level Plugin/Script Ends -->
     <!--  Custom Script Ends  -->
 </body>
 </html>

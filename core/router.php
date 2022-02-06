@@ -53,7 +53,7 @@ class Router {
         }
         if(!$callback || !is_callable($callback)){
             http_response_code(404);
-            echo '404 -page not found';
+            require 'pages_error404.html';
             exit;
         }
     

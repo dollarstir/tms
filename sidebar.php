@@ -103,7 +103,7 @@ echo '<ul class="list-unstyled menu-categories" id="accordionExample">
                         <div class="submenu-info">
                             <div class="submenu-inner-info">
                                 <h5 class="mb-3">Dashboard</h5>
-                                <p>Lorem ipsum dolor sit sed ametctetur elit.</p>
+                                
                             </div>
                             <!-- <ul class="submenu-list"> 
                                 <li class="active">
@@ -132,10 +132,10 @@ echo '<ul class="list-unstyled menu-categories" id="accordionExample">
                             </div>
                             <ul class="submenu-list"> 
                                 <li>
-                                    <a href="add_staff.php"> Add Staff </a>
+                                    <a href="/tms/newstaff"> Add Staff </a>
                                 </li>
                                 <li>
-                                    <a href="staff_table.php"> View Staff </a>
+                                    <a href="/tms/viewstaff"> View Staff </a>
                                 </li>
                                 <!-- <li>
                                     <a data-toggle="collapse" href="index.php#appsCompanies" role="button" aria-expanded="false" aria-controls="collapseExample" class="dropdown-toggle">
@@ -258,20 +258,13 @@ echo '<ul class="list-unstyled menu-categories" id="accordionExample">
                             </div>
                             <ul class="submenu-list" data-parent-element="#dashboard"> 
                                 <li>
-                                    <a href="add_visitor.php"> Add Visitor</a>
+                                    <a href="/tms/newvisitor"> Add Visitor</a>
                                 </li>
                                 <li>
-                                    <a href="visitor_table.php"> View Visitor</a>
+                                    <a href="/tms/visitors"> View Visitor</a>
                                 </li>
-                                <!-- <li>
-                                    <a href="forms_text_editor.html"> Text Editor </a>
-                                </li>
-                                <li>
-                                    <a href="forms_file_upload.html"> File Upload </a>
-                                </li>
-                                <li>
-                                    <a href="forms_multiple_step.html"> Multiple Step </a>
-                                </li> -->
+                                
+                                
                             </ul>
                         </div>
                     </div>
@@ -283,17 +276,12 @@ echo '<ul class="list-unstyled menu-categories" id="accordionExample">
                             </div>
                             <ul class="submenu-list"> 
                                 <li>
-                                    <a href="add_customer_info.php"> Add Customer Info </a>
+                                    <a href="/tms/newcustomer"> Add Customer Info </a>
                                 </li>
                                 <li>
-                                    <a href="customer_info_table.php"> View Customer Info </a>
+                                    <a href="/tms/customers"> View Customer Info </a>
                                 </li>
-                                <!-- <li>
-                                    <a href="pages_contact_us.html"> Contact Form </a>
-                                </li>
-                                <li>
-                                    <a href="pages_contact_us_2.html"> Contact Form 2 </a>
-                                </li> -->
+                                
                                 <!-- <li>
                                     <a data-toggle="collapse" href="index.php#otherPagesError" role="button" aria-expanded="false" aria-controls="collapseExample" class="dropdown-toggle">
                                         Error <i class="las la-angle-right sidemenu-right-icon"></i>
@@ -378,59 +366,12 @@ echo '<ul class="list-unstyled menu-categories" id="accordionExample">
                             </div>
                             <ul class="submenu-list"> 
                                 <li>
-                                    <a href="add_booking_info.php"> Add Booking Info  </a>
+                                    <a href="/tms/newbooking"> Add Booking Info  </a>
                                 </li>
                                 <li>
-                                    <a href="booking_info_table.php"> View Booking Info </a>
+                                    <a href="/tms/bookings"> View Booking Info </a>
                                 </li>
-                                <!-- <li>
-                                    <a href="basic_ui_cards.html"> Bootstrap Cards </a>
-                                </li>
-                                <li>
-                                    <a href="basic_ui_carousel.html">Carousel</a>
-                                </li>
-                                <li>
-                                    <a href="basic_ui_countdown.html"> Countdown </a>
-                                </li>
-                                <li>
-                                    <a href="basic_ui_counter.html"> Counter </a>
-                                </li>
-                                <li>
-                                    <a href="basic_ui_dragitems.html">Drag Items</a>
-                                </li>
-                                <li>
-                                    <a href="basic_ui_lightbox.html"> Lightbox </a>
-                                </li>
-                                <li>
-                                    <a href="basic_ui_lightbox_side_open.html"> Lightbox Side Open</a>
-                                </li>
-                                <li>
-                                    <a href="basic_ui_list_groups.html"> List Group </a>
-                                </li>
-                                <li>
-                                    <a href="basic_ui_media_object.html"> Media Object </a>
-                                </li>
-                                <li>
-                                    <a href="basic_ui_modals.html"> Modals </a>
-                                </li> 
-                                <li>
-                                    <a href="basic_ui_notifications.html"> Notifications </a>
-                                </li>
-                                <li>
-                                    <a href="basic_ui_scrollspy.html"> Scroll Spy </a>
-                                </li>
-                                <li>
-                                    <a href="basic_ui_session_timeout.html"> Session Timeout </a>
-                                </li>
-                                <li>
-                                    <a href="basic_ui_sweet_alerts.html"> Sweet Alerts </a>
-                                </li>
-                                <li>
-                                    <a href="basic_ui_tabs.html"> Tabs </a>
-                                </li>
-                                <li>
-                                    <a href="basic_ui_tour_tutorial.html"> Tour Tutorial </a>
-                                </li> -->
+                                
                             </ul>
                         </div>
                     </div>
@@ -442,59 +383,12 @@ echo '<ul class="list-unstyled menu-categories" id="accordionExample">
                             </div>
                             <ul class="submenu-list">
                                 <li>
-                                    <a href="add_session.php"> Add Session </a>
+                                    <a href="/tms/newsession"> Add Session </a>
                                 </li>
                                 <li>
-                                    <a href="session_table.php"> View Session </a>
+                                    <a href="/tms/session"> View Session </a>
                                 </li>
-                                <!-- <li>
-                                    <a href="ui_elements_badges.html"> Badges </a>
-                                </li>
-                                <li>
-                                    <a href="ui_elements_breadcrumbs.html"> Breadcrumbs </a>
-                                </li>                            
-                                <li>
-                                    <a href="ui_elements_buttons.html"> Buttons </a>
-                                </li>
-                                <li>
-                                    <a href="ui_elements_colors.html"> Colors </a>
-                                </li>
-                                <li> 
-                                    <a href="ui_elements_dropdowns.html"> Dropdown </a>
-                                </li>
-                                <li>
-                                    <a href="ui_elements_grid.html"> Grid </a>
-                                </li>
-                                <li>
-                                    <a href="ui_elements_jumbotron.html"> Jumbotron </a>
-                                </li>
-                                <li>
-                                    <a href="ui_elements_list_group.html"> List Group </a>
-                                </li>
-                                <li>
-                                    <a href="ui_elements_loading_spinners.html"> Loading Spinners </a>
-                                </li>
-                                <li>
-                                    <a href="ui_elements_pagination.html"> Pagination </a>
-                                </li>
-                                <li>
-                                    <a href="ui_elements_popovers.html"> Popovers </a>
-                                </li>
-                                <li>
-                                    <a href="ui_elements_progress_bar.html"> Progress Bar </a>
-                                </li>
-                                <li>
-                                    <a href="ui_elements_ribbons.html"> Ribbons </a>
-                                </li>
-                                <li>
-                                    <a href="ui_elements_tooltips.html"> Tooltips </a>
-                                </li>
-                                <li>
-                                    <a href="ui_elements_typography.html"> Typography </a>
-                                </li>
-                                <li>
-                                    <a href="ui_elements_video.html"> Video </a>
-                                </li> -->
+                                
                             </ul>
                         </div>
                     </div>
@@ -602,10 +496,10 @@ echo '<ul class="list-unstyled menu-categories" id="accordionExample">
                             </div>
                             <ul class="submenu-list">
                                 <li>
-                                    <a href="add_events_executed.php"> Add Event Executed </a>
+                                    <a href="/tms/executedevents"> Add Event Executed </a>
                                 </li>
                                 <li>
-                                    <a href="events_executed.php"> View Event Executed </a>
+                                    <a href="/tms/eventx"> View Event Executed </a>
                                 </li>
                             </ul>
                         </div>
@@ -618,10 +512,10 @@ echo '<ul class="list-unstyled menu-categories" id="accordionExample">
                             </div>
                             <ul class="submenu-list">
                                 <li>
-                                    <a href="add_events_bookings.php"> Add Events Booking </a>
+                                    <a href="/tms/eventbookings"> Add Events Booking </a>
                                 </li>
                                 <li>
-                                    <a href="events_booking_table.php"> View Events Booking </a>
+                                    <a href="/tms/eventb"> View Events Booking </a>
                                 </li>  
                                 <!-- <li>
                                     <a href="charts_chartjs.html"> ChartJS </a>

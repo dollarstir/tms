@@ -1,11 +1,9 @@
 <?php
 
-class Sel extends database
-{
-    public function select($table, $target, $conjunction = '')
-    {
+class Login extends database {
+
+    public function authenticate($table,$target, $conjunction = ''){
         $vs = '';
-        // $allval = []
         foreach ($target as $value) {
             if (is_array($value)) {
                 if (count($value) == 3) {
@@ -20,33 +18,33 @@ class Sel extends database
                 }
             }
         }
-        // $vs = rtrim($vs, $conjunction);
-        // echo $vs;
-        $sel = $this->conn->prepare("SELECT * FROM $table $vs");
-        foreach ($target as $value) {
+        $ft = $this->conn->prepare("SELECT * FROM $table $vs");
+        foreach($target as $value){
             if (is_array($value)) {
                 if (count($value) == 3) {
-                    $sel->bindValue(':'.$value[0], $value[2]);
+                    $ft->bindValue(':'.$value[0], $value[2]);
                 }
             }
         }
         try{
+            $ft->execute();
+            $row = $ft->rowCount();
+            $logs = $ft->fetch();
+            if($row >0){
+                session_start();
+                $_SESSION['user'] = $logs;
+                $msg = "loginsuccess";
+            }else{
+                $msg = 'loginfailed';
+            }
 
-            $sel->execute();
-            
-            return $sel->fetchAll(PDO::FETCH_ASSOC);
         }catch(PDOException $e){
-            echo $e;
+
+            $msg = 'db error '.$e;
+
         }
+
+        return $msg;
+
     }
-
-    public function getall($table, $pref = '')
-    {
-        $sel = $this->conn->prepare("SELECT * FROM $table $pref");
-        $sel->execute();
-
-        return $sel->fetchAll(PDO::FETCH_ASSOC);
-    }
-
-    
 }

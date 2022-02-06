@@ -8,3 +8,12 @@ spl_autoload_register(function ($class) {
     // include 'classes/'.$class.'.php';
     require $path;
 });
+
+function bolt($loaction){
+    echo  '<script>window.location="'.$loaction.'"</script>';
+
+}
+
+function say($something){
+    echo $something;
+}

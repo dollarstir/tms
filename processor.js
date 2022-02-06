@@ -27,6 +27,45 @@ $(function(){
 
         }
 
+        else if(response == 'loginsuccess'){
+
+            swal({
+                title: "Login Successfull!",
+                text: "will be redirected soon",
+                timer: 2000,
+                type: 'success',
+                padding: "2em",
+                onOpen: function () {
+                  swal.showLoading();
+                },
+              }).then(function (result) {
+                window.location="/tms/home";
+              });
+
+        }
+
+
+        else if(response == 'loginfailed'){
+
+            swal({
+                title: "Oops!",
+                text: "Record not found in database! ",
+                type: "error",
+                padding: "2em",
+              });
+
+        }
+        else{
+
+            swal({
+                title: "Attention!",
+                text: response,
+                type: "warning",
+                padding: "2em",
+              });
+
+        }
+
 
     }
 
@@ -297,6 +336,46 @@ $('.delcustomer').click(function(e){
         url: 'processor.php?action=delete&table=customers&sid='+ sid,
         type: 'post',
         data: jQuery.param({ sid : $('.delcustomer').attr('id') }),
+        cache: false,
+        contentType: false,
+        processData: false,
+        beforeSend: before,
+        success: resp
+
+    };
+    $.ajax(session);
+});
+
+
+
+
+$('.addadmin').submit(function(e){
+
+    e.preventDefault();
+    // before();
+    var session = {
+        url: 'processor.php?action=addadmin',
+        type: 'post',
+        data: new FormData(this),
+        cache: false,
+        contentType: false,
+        processData: false,
+        beforeSend: before,
+        success: resp
+
+    };
+    $.ajax(session);
+});
+
+
+$('.supperlogin').submit(function(e){
+
+    e.preventDefault();
+    // before();
+    var session = {
+        url: 'processor.php?action=supperlog',
+        type: 'post',
+        data: new FormData(this),
         cache: false,
         contentType: false,
         processData: false,
