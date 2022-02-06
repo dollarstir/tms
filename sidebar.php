@@ -3,23 +3,23 @@
 echo '<ul class="list-unstyled menu-categories" id="accordionExample">
 
 
-                    <li class="menu active">
-                        <a href="javascript:void(0);" id="dashboard" data-active="true" class="main-item dropdown-toggle">
+                    <li class="menu">
+                        <a href="/tms/home" id="dashboard" data-active="true" class="main-item dropdown-toggle">
                             <i class="las la-home"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
                     <li class="menu">
                         <a href="javascript:void(0);" id="apps" class="main-item dropdown-toggle">
-                            <i class="lab la-medapps"></i>
+                            <i class="las la-user"></i>
                             <span>Staff</span>
                         </a>
                     </li>
                     <li class="menu">
                         <a href="javascript:void(0);" id="authPages" class="main-item dropdown-toggle">
                             <span class="new-notification"></span>
-                            <i class="las la-lock"></i>
-                            <span>Visitor</span>
+                            <i class="las la-user"></i>
+                            <span>Visitors</span>
                         </a>
                     </li>
                     <li class="menu">
@@ -30,7 +30,7 @@ echo '<ul class="list-unstyled menu-categories" id="accordionExample">
                     </li>
                     <li class="menu">
                         <a href="javascript:void(0);" id="basicUI" class="main-item dropdown-toggle">
-                            <i class="las la-drafting-compass"></i>
+                            <i class="las la-pen"></i>
                             <span>Booking Info</span>
                         </a>
                     </li>

@@ -6,23 +6,31 @@ $(function(){
         if(response == "success"){
             swal.close();
             swal({
-                title: "Good job!",
-                text: "Record added successfully!",
-                type: "success",
+                title: "Success",
+                text: "Record added Successfully",
+                timer: 1000,
+                type: 'success',
                 padding: "2em",
-              }).then(function(){
-                  window.location.reload();
+                onOpen: function () {
+                  swal.showLoading();
+                },
+              }).then(function (result) {
+                window.location.reload();
               });
         }
         else if(response == 'deleted'){
 
             swal({
                 title: "Done!",
-                text: "Record deleted successfully!",
-                type: "success",
+                text: "Record Deleted Successfully",
+                timer: 1000,
+                type: 'success',
                 padding: "2em",
-              }).then(function(){
-                  window.location.reload();
+                onOpen: function () {
+                  swal.showLoading();
+                },
+              }).then(function (result) {
+                window.location.reload();
               });
 
         }
@@ -40,6 +48,22 @@ $(function(){
                 },
               }).then(function (result) {
                 window.location="/tms/home";
+              });
+
+        }
+        else if(response == 'Updated Successfully'){
+
+            swal({
+                title: "Success",
+                text: "Update Successful",
+                timer: 1000,
+                type: 'success',
+                padding: "2em",
+                onOpen: function () {
+                  swal.showLoading();
+                },
+              }).then(function (result) {
+                window.location.reload();
               });
 
         }
@@ -347,6 +371,51 @@ $('.delcustomer').click(function(e){
 });
 
 
+$('.deladmin').click(function(e){
+
+    e.preventDefault();
+    var id = this.id;
+    var sid = this.id;
+    // alert(id);
+    // before();
+    var session = {
+        url: 'processor.php?action=delete&table=cmd&sid='+ sid,
+        type: 'post',
+        data: jQuery.param({ sid : $('.deladmin').attr('id') }),
+        cache: false,
+        contentType: false,
+        processData: false,
+        beforeSend: before,
+        success: resp
+
+    };
+    $.ajax(session);
+});
+
+
+
+$('.delstaff').click(function(e){
+
+    e.preventDefault();
+    var id = this.id;
+    var sid = this.id;
+    // alert(id);
+    // before();
+    var session = {
+        url: 'processor.php?action=delete&table=staff&sid='+ sid,
+        type: 'post',
+        data: jQuery.param({ sid : $('.delstaff').attr('id') }),
+        cache: false,
+        contentType: false,
+        processData: false,
+        beforeSend: before,
+        success: resp
+
+    };
+    $.ajax(session);
+});
+
+
 
 
 $('.addadmin').submit(function(e){
@@ -384,6 +453,26 @@ $('.supperlogin').submit(function(e){
 
     };
     $.ajax(session);
+});
+
+
+
+$('.editadmin').submit(function(e){
+
+    e.preventDefault();
+    // before();
+    var admininfo = {
+        url: 'processor.php?action=editadmin',
+        type: 'post',
+        data: new FormData(this),
+        cache: false,
+        contentType: false,
+        processData: false,
+        beforeSend: before,
+        success: resp
+
+    };
+    $.ajax(admininfo);
 });
     
 })

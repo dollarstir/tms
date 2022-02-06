@@ -219,6 +219,29 @@ echo $response = $add->insert('eventb',
 
                 break;
 
+            case 'editadmin':
+                $up = new Upd();
+                extract($_POST);
+                if(empty($_FILES)){
+                    echo $response = $up->update('cmd',
+                [
+                    'name' =>$name,
+                    'email'=> $email,
+                    'username' =>$username
+
+                ],'id='.$id);
+                }
+                else{
+                    echo $response = $up->update('cmd',
+                [
+                    'name' =>$name,
+                    'email'=> $email,
+                    'username' =>$username
+
+                ],'id='.$id,$_FILES);
+                }
+                break;
+
            default:
 
             break;

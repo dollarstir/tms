@@ -58,14 +58,7 @@ $checker->mainchecker('/tms/login');
     <!--  Main Container Starts  -->
     <div class="main-container" id="container">
         <!-- Logo area (Larger Screen) Starts -->
-        <div class="tl-logo-area d-none d-md-block">
-            <div class="d-flex flex-row align-center justify-content-center logo-area">
-                <a href="index.php" class="nav-link pr-0 pl-0">
-                    <img src="common-assets/img/logo.png" class="navbar-logo" alt="logo">
-                </a>
-                <a href="index.php" class="nav-link d-none d-md-block"> TUCEE </a>
-            </div>
-        </div>
+        <?php include 'logo.php';?>
         <!-- Logo area (Larger Screen) Ends -->
         <div class="overlay"></div>
         <div class="search-overlay"></div>
@@ -611,12 +604,12 @@ $checker->mainchecker('/tms/login');
                 </div>
             </div>
             <!-- Main Body Ends -->
-            <div class="responsive-msg-component">
-                <p>
-                    <a class="close-msg-component"><i class="las la-times"></i></a>
-                    Please reload the page when you change the viewport size to view the responsive functionalities correctly
-                </p>
-            </div>
+                <!-- <div class="responsive-msg-component">
+                    <p>
+                        <a class="close-msg-component"><i class="las la-times"></i></a>
+                        Please reload the page when you change the viewport size to view the responsive functionalities correctly
+                    </p>
+                </div> -->
             <!-- Copyright Footer Starts -->
             <div class="footer-wrapper">
                 <div class="footer-section f-section-1">

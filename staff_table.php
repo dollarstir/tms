@@ -27,6 +27,10 @@ $checker->mainchecker('/tms/login');
     <!-- Page Level Plugin/Style Starts -->
     <link rel="stylesheet" type="text/css" href="common-assets/plugins/table/datatable/datatables.css">
     <link rel="stylesheet" type="text/css" href="common-assets/plugins/table/datatable/dt-global_style.css">
+    <script src="common-assets/plugins/sweetalerts/promise-polyfill.js"></script>
+    <link href="common-assets/plugins/sweetalerts/sweetalert2.min.css" rel="stylesheet" type="text/css" />
+    <link href="common-assets/plugins/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/basic-ui/custom_sweetalert.css" rel="stylesheet" type="text/css" />
     <!-- Page Level Plugin/Style Ends -->
 </head>
 <body>
@@ -51,14 +55,7 @@ $checker->mainchecker('/tms/login');
     <!--  Main Container Starts  -->
     <div class="main-container" id="container">
         <!-- Logo area (Larger Screen) Starts -->
-        <div class="tl-logo-area d-none d-md-block">
-            <div class="d-flex flex-row align-center justify-content-center logo-area">
-                <a href="index.php" class="nav-link pr-0 pl-0">
-                    <img src="common-assets/img/logo.png" class="navbar-logo" alt="logo">
-                </a>
-                <a href="index.php" class="nav-link d-none d-md-block"> TUCEE </a>
-            </div>
-        </div>
+        <?php include 'logo.php';?> 
         <!-- Logo area (Larger Screen) Ends -->
         <div class="overlay"></div>
         <div class="search-overlay"></div>
@@ -94,114 +91,52 @@ $checker->mainchecker('/tms/login');
                                                     <thead>
                                                         <tr>
                                                             <th>Name</th>
-                                                            <th>Position</th>
-                                                            <th>Office</th>
-                                                            <th>Age</th>
+                                                            <th>Email</th>
+                                                            <th>Contact</th>
+                                                            <th>Photo</th>
+                                                            <th>Department</th>
+                                                            <th>Job title</th>
                                                             <th>Start date</th>
-                                                            <th>Action</th>
+                                                            <!-- <th>Action</th> -->
                                                             <th class="no-content"></th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <!-- <tr>
-                                                            <td>Tiger Nixon</td>
-                                                            <td>System Architect</td>
-                                                            <td>Edinburgh</td>
-                                                            <td>61</td>
-                                                            <td>2011/04/25</td>
-                                                            <td>$320,800</td>
-                                                            <td><a href="datatables.html#" title="Edit" class="font-20 text-primary"><i class="las la-edit"></i></a></td>
-                                                        </tr>
+                                                    <?php
+
+                                                        $tb = new Sel();
+                                                        $all = $tb->getall('staff');
+                                                        foreach ($all as $row) {
+                                                        echo '
                                                         <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                            <td><a href="datatables.html#" title="Edit" class="font-20 text-primary"><i class="las la-edit"></i></a></td>
+                                                        <td>'.$row['name'].'</td>
+                                                        <td>'.$row['email'].'</td>
+                                                        <td>'.$row['contact'].'</td>
+                                                        <td>
+                                                        <img src="upload/'.$row['pic'].'"  style="width:100px;height: 100px;">
+                                                        </td>
+                                                        <td>'.$row['department'].'</td>
+                                                        <td>'.$row['jobtitle'].'</td>
+                                                        <td>'.$row['datestarted'].'</td>
+                                                        
+                                                        <td> <button  title="Edit" class="btn btn-secondary"><i class="las la-edit"></i> </button> <button title="delete" id="'.$row['id'].'"  class="btn btn-danger delstaff"><i class="las la-trash"></i></button>  </td>
                                                         </tr>
-                                                        <tr>
-                                                            <td>Ashton Cox</td>
-                                                            <td>Junior Technical Author</td>
-                                                            <td>San Francisco</td>
-                                                            <td>66</td>
-                                                            <td>2009/01/12</td>
-                                                            <td>$86,000</td>
-                                                            <td><a href="datatables.html#" title="Edit" class="font-20 text-primary"><i class="las la-edit"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Cedric Kelly</td>
-                                                            <td>Senior Javascript Developer</td>
-                                                            <td>Edinburgh</td>
-                                                            <td>22</td>
-                                                            <td>2012/03/29</td>
-                                                            <td>$433,060</td>
-                                                            <td><a href="datatables.html#" title="Edit" class="font-20 text-primary"><i class="las la-edit"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Airi Satou</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>33</td>
-                                                            <td>2008/11/28</td>
-                                                            <td>$162,700</td>
-                                                            <td><a href="datatables.html#" title="Edit" class="font-20 text-primary"><i class="las la-edit"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Brielle Williamson</td>
-                                                            <td>Integration Specialist</td>
-                                                            <td>New York</td>
-                                                            <td>61</td>
-                                                            <td>2012/12/02</td>
-                                                            <td>$372,000</td>
-                                                            <td><a href="datatables.html#" title="Edit" class="font-20 text-primary"><i class="las la-edit"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Herrod Chandler</td>
-                                                            <td>Sales Assistant</td>
-                                                            <td>San Francisco</td>
-                                                            <td>59</td>
-                                                            <td>2012/08/06</td>
-                                                            <td>$137,500</td>
-                                                            <td><a href="datatables.html#" title="Edit" class="font-20 text-primary"><i class="las la-edit"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Rhona Davidson</td>
-                                                            <td>Integration Specialist</td>
-                                                            <td>Tokyo</td>
-                                                            <td>55</td>
-                                                            <td>2010/10/14</td>
-                                                            <td>$327,900</td>
-                                                            <td><a href="datatables.html#" title="Edit" class="font-20 text-primary"><i class="las la-edit"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Colleen Hurst</td>
-                                                            <td>Javascript Developer</td>
-                                                            <td>San Francisco</td>
-                                                            <td>39</td>
-                                                            <td>2009/09/15</td>
-                                                            <td>$205,500</td>
-                                                            <td><a href="datatables.html#" title="Edit" class="font-20 text-primary"><i class="las la-edit"></i></a></td>
-                                                        </tr> -->
-                                                        <tr>
-                                                            <td>Sonya Frost</td>
-                                                            <td>Software Engineer</td>
-                                                            <td>Edinburgh</td>
-                                                            <td>23</td>
-                                                            <td>2008/12/13</td>
-                                                            <td> <input type="button" value="Edit" class="btn btn-success"> <input type="button" value="Del" class="btn btn-danger"> <input type="button" value="Upd" class="btn btn-primary"> </td>
-                                                            <td><a href="datatables.html#" title="Edit" class="font-20 text-primary"><i class="las la-edit"></i></a></td>
-                                                        </tr>
+                                                        
+                                                        ';
+                                                        }
+
+                                                    ?>
                                                     </tbody>
                                                     <tfoot>
                                                         <tr>
-                                                            <th>Name</th>
-                                                            <th>Position</th>
-                                                            <th>Office</th>
-                                                            <th>Age</th>
+                                                        <th>Name</th>
+                                                            <th>Email</th>
+                                                            <th>Contact</th>
+                                                            <th>Photo</th>
+                                                            <th>Department</th>
+                                                            <th>Job title</th>
                                                             <th>Start date</th>
-                                                            <th>Action</th>
+                                                            <!-- <th>Action</th> -->
                                                             <th></th>
                                                         </tr>
                                                     </tfoot>
@@ -211,12 +146,12 @@ $checker->mainchecker('/tms/login');
                                     </div>
                                    
             <!-- Main Body Ends -->
-            <div class="responsive-msg-component">
+            <!-- <div class="responsive-msg-component">
                 <p>
                     <a class="close-msg-component"><i class="las la-times"></i></a>
                     Please reload the page when you change the viewport size to view the responsive functionalities correctly
                 </p>
-            </div>
+            </div> -->
             <!-- Copyright Footer Starts -->
             <div class="footer-wrapper">
                 <div class="footer-section f-section-1">
@@ -620,6 +555,12 @@ $checker->mainchecker('/tms/login');
             } );
         } );
     </script>
+    <script src="common-assets/plugins/sweetalerts/sweetalert2.min.js"></script>
+    <script src="assets/js/basicui/sweet_alerts.js"></script>
+    
+    <!-- Page Level Plugin/Script Ends -->
+     <!-- php york script -->
+     <script src="processor.js"></script>
     <!-- Page Level Plugin/Script Ends -->
 </body>
 </html>

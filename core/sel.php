@@ -2,7 +2,7 @@
 
 class Sel extends database
 {
-    public function select($table, $target, $conjunction = '')
+    public function select($table, $target, $conjunction = '',$limit='LIMIT 1')
     {
         $vs = '';
         // $allval = []
@@ -20,9 +20,15 @@ class Sel extends database
                 }
             }
         }
+        // echo "SELECT * FROM $table $vs $limit";
         // $vs = rtrim($vs, $conjunction);
         // echo $vs;
-        $sel = $this->conn->prepare("SELECT * FROM $table $vs");
+        if($limit == ''){
+            $sel = $this->conn->prepare("SELECT * FROM $table $vs");
+        }
+        else{
+            $sel = $this->conn->prepare("SELECT * FROM $table $vs $limit");
+        }
         foreach ($target as $value) {
             if (is_array($value)) {
                 if (count($value) == 3) {
@@ -40,9 +46,15 @@ class Sel extends database
         }
     }
 
-    public function getall($table, $pref = '')
+    public function getall($table, $order = '',$limit='')
     {
-        $sel = $this->conn->prepare("SELECT * FROM $table $pref");
+        
+        if($limit == ''){
+            $sel = $this->conn->prepare("SELECT * FROM $table $order");
+        }
+        else{
+            $sel = $this->conn->prepare("SELECT * FROM $table $order $limit");
+        }
         $sel->execute();
 
         return $sel->fetchAll(PDO::FETCH_ASSOC);

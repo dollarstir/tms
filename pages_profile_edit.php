@@ -10,7 +10,7 @@ $checker->mainchecker('/tms/login');
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>TUCEE Profile Edit  </title>
+    <title>TUCEE Edit Account</title>
     <link rel="icon" type="image/x-icon" href="common-assets/img/favicon.ico"/>
     <!-- Common Styles Starts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -55,14 +55,7 @@ $checker->mainchecker('/tms/login');
     <!--  Main Container Starts  -->
     <div class="main-container" id="container">
         <!-- Logo area (Larger Screen) Starts -->
-        <div class="tl-logo-area d-none d-md-block">
-            <div class="d-flex flex-row align-center justify-content-center logo-area">
-                <a href="index.php" class="nav-link pr-0 pl-0">
-                    <img src="common-assets/img/logo.png" class="navbar-logo" alt="logo">
-                </a>
-                <a href="index.php" class="nav-link d-none d-md-block"> TUCEE </a>
-            </div>
-        </div>
+        <?php include 'logo.php';?>
         <!-- Logo area (Larger Screen) Ends -->
         <div class="overlay"></div>
         <div class="search-overlay"></div>
@@ -852,52 +845,72 @@ $checker->mainchecker('/tms/login');
                                                 <div class="profile-edit-right">
                                                     <div class="tab-content" id="v-border-pills-tabContent">
                                                         <div class="tab-pane fade show active" id="v-border-pills-general" role="tabpanel" aria-labelledby="v-border-pills-general-tab">
-                                                            <div class="row">
+                                                        <?php
+                                                            $get = new Sel();
+                                                            $id = $_SESSION['user']['id'];
+                                                            $result = $get->select('cmd',[
+                                                                ['id','=',$id]
+
+                                                            ]);
+                                                            if($result[0]['pic'] ==''){
+                                                                $pic = 'common-common-common-common-assets/img/profile-16.jpg';
+                                                            }
+                                                            else{
+                                                                $pic = 'upload/'.$result[0]['pic'];
+                                                            }
+
+                                                            
+                                                        ?>
+                                                        <div class="row">
+                                                            <form  class="editadmin">
                                                                 <div class="col-xl-3 col-lg-12 col-md-12">
                                                                     <div class="upload text-center img-thumbnail">
-                                                                        <input type="file" id="input-file-max-fs" class="dropify" data-default-file="common-common-common-common-assets/img/profile-16.jpg" data-max-file-size="2M" name="pic"/>
+                                                                        <input type="file" id="input-file-max-fs" class="dropify" data-default-file="<?php say($pic) ?>" data-max-file-size="2M" name="pic"/>
                                                                         <p class="mt-2"><i class="flaticon-cloud-upload mr-1"></i> Upload Picture</p>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-xl-9 col-lg-12 col-md-12 mt-md-0 mt-4">
                                                                     <div class="form">
-                                                                        <div class="row">
-                                                                            <div class="col-sm-6">
-                                                                                <div class="form-group">
-                                                                                    <label for="fullName">Full Name</label>
-                                                                                    <input type="text" class="form-control mb-4" placeholder="Full Name" value="Sara Williamson" name="name">
+                                                                       
+                                                                            <div class="row">
+                                                                                <div class="col-sm-6">
+                                                                                    <div class="form-group">
+                                                                                        <label for="fullName">Full Name</label>
+                                                                                        <input type="text" class="form-control mb-4" placeholder="Full Name" value="<?php  say($result[0]['name']);?>" name="name">
+                                                                                        <input type="hidden" class="form-control mb-4" placeholder="Full Name" value="<?php  say($result[0]['id']);?>" name="id">
+                                                                                    </div>
                                                                                 </div>
-                                                                            </div>
+                                                                                <div class="col-md-6">
+                                                                                <div class="form-group">
+                                                                                    <label for="email">Email</label>
+                                                                                    <input type="text" class="form-control mb-4" placeholder="Write your email here" value="<?php  say($result[0]['email']);?>" name="email">
+                                                                                </div>
+                                                                            </div> 
                                                                             <div class="col-md-6">
-                                                                            <div class="form-group">
-                                                                                <label for="email">Email</label>
-                                                                                <input type="text" class="form-control mb-4" placeholder="Write your email here" value="">
-                                                                            </div>
-                                                                        </div> 
-                                                                        <div class="col-md-6">
-                                                                            <div class="form-group">
-                                                                                <label for="email">Username</label>
-                                                                                <input type="text" class="form-control mb-4" placeholder="Write your username here" value="" name="username">
-                                                                            </div>
-                                                                        </div> 
+                                                                                <div class="form-group">
+                                                                                    <label for="email">Username</label>
+                                                                                    <input type="text" class="form-control mb-4" placeholder="Write your username here" value="<?php  say($result[0]['username']);?>" name="username">
+                                                                                </div>
+                                                                            </div> 
 
-                                                                        <div class="col-md-6">
-                                                                            <div class="form-group">
-                                                                                <label for="email">Password</label>
-                                                                                <input type="password" class="form-control mb-4" placeholder="passworde" value="" name="password">
+                                                                            <!-- <div class="col-md-6">
+                                                                                <div class="form-group">
+                                                                                    <label for="email">Password</label>
+                                                                                    <input type="password" class="form-control mb-4" placeholder="passworde" value="" name="password">
+                                                                                </div>
+                                                                            </div>  -->
+                                                                                
                                                                             </div>
-                                                                        </div> 
-                                                                            
-                                                                        </div>
-                                                                        <div class="mt-3">
-                                                        <button class="btn btn-dark btn-sm">Reset All</button>
-                                                        <div class="blockui-growl-message">
-                                                            <i class="flaticon-double-check"></i>&nbsp; Settings Saved Successfully
-                                                        </div>
-                                                        <button id="multiple-messages" class="btn btn-primary btn-sm">Save</button>
-                                                    </div>
+                                                                            <div class="mt-3">
+                                                                                            <button type="reset" class="btn btn-dark btn-sm">Reset All</button>
+                                                                                        <div class="blockui-growl-message">
+                                                                                            <i class="flaticon-double-check"></i>&nbsp; Settings Saved Successfully
+                                                                                        </div>
+                                                                                        <input id="multiple-messages" class="btn btn-primary btn-sm" type="submit" value="Save">
+                                                                            </div>
+                                                                        
                                                                     </div>
-                                                                </div>
+                                                            </form>   </div>
                                                             </div>
                                                         </div>
                                                         <div class="tab-pane fade" id="v-border-pills-about" role="tabpanel" aria-labelledby="v-border-pills-about-tab">
@@ -1329,12 +1342,12 @@ Acquiring data from primary or secondary data sources and maintaining databases.
                 </div>
             </div>
             <!-- Main Body Ends -->
-            <div class="responsive-msg-component">
+            <!-- <div class="responsive-msg-component">
                 <p>
                     <a class="close-msg-component"><i class="las la-times"></i></a>
                     Please reload the page when you change the viewport size to view the responsive functionalities correctly
                 </p>
-            </div>
+            </div> -->
             <!-- Copyright Footer Starts -->
             <div class="footer-wrapper">
                 <div class="footer-section f-section-1">

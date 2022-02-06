@@ -2,7 +2,7 @@
 
 class Inser extends database
 {
-    public function insert($table, $records, $files = null)
+    public function insert($table, $records, $files = null,$uploadto ='upload')
     {
         $man = '';
         $vv = '';
@@ -19,10 +19,11 @@ class Inser extends database
                     $oldfilename = $file['name'];
                     $filetype = array_reverse(explode('/', $file['type']))[0];
                     $newfilename = time().'.'.$filetype;
-                    if (move_uploaded_file($file['tmp_name'], 'upload/'.$newfilename)) {
+                    if (move_uploaded_file($file['tmp_name'], $uploadto.'/'.$newfilename)) {
                         $records[$name] = $newfilename;
                     } else {
                         $flag = true;
+                        $msg= "failed  to upload file";
                     }
                 }
             }

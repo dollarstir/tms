@@ -8,6 +8,10 @@ $router->route('tms/', function () {
     return view('/indexb.php');
 });
 
+$router->route('/', function () {
+    return view('/indexb.php');
+});
+
 $router->route('tms/home', function () {
     return view('/indexb.php');
 });
