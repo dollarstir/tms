@@ -17,3 +17,7 @@ function bolt($loaction){
 function say($something){
     echo $something;
 }
+
+function ext(){
+    return  extract($_POST);
+}

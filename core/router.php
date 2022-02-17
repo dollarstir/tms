@@ -44,6 +44,8 @@ class Router {
         $params =[];
         foreach ($routes as $route => $handler){
             if(preg_match("%^{$route}$%",$action,$matches) === 1){
+                // exit(var_dump($route) . " -- " . $action);
+
                 $callback = $handler;
                 unset($matches[0]);
                 $params = $matches;

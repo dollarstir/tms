@@ -348,7 +348,7 @@ $checker->mainchecker('/tms/login');
                                                     <input type="number" name="females" placeholder="Female Attendance"  class="form-control mb-3" /> 
                                                     <input type="number" name="total" placeholder="Total Attendance"  class="form-control mb-3" /> 
                                                     <input type="text" name="speaker" placeholder="Speaker"  class="form-control mb-3" /> 
-                                                    <input type="text" name="report" placeholder="State Of Report"  class="form-control mb-3" /> 
+                                                    <textarea name="report" placeholder="State Of Report"  class="form-control mb-3"></textarea>
 
 
     

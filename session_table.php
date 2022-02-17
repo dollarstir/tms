@@ -130,7 +130,7 @@ $checker->mainchecker('/tms/login');
                                                             <td>'.$row['datenext'].'</td>
                                                             <td><a href="processor.php?action=viewreport&rid='.$row['psycotest'].'"  class="btn btn-primary"><i class="las la-eye"></i>View Report</a></td>
                                                             <td><a href="processor.php?action=viewreport&rid='.$row['report'].'"  class="btn btn-primary"><i class="las la-eye"></i>View Report</a></td>
-                                                            <td>  <button  class="btn btn-danger delsession" id="'.$row['id'].'">Delete</button>  </td>
+                                                            <td><a href="/tms/session/'.$row['id'].'"  title="Edit" class="btn btn-secondary"><i class="las la-edit"></i> Edit</a>   <button  class="btn btn-danger delsession" id="'.$row['id'].'">Delete</button>  </td>
                                                             </tr>
                                                             
                                                             ';

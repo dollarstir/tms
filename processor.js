@@ -416,6 +416,28 @@ $('.delstaff').click(function(e){
 });
 
 
+$('.delsalary').click(function(e){
+
+    e.preventDefault();
+    var id = this.id;
+    var sid = this.id;
+    // alert(id);
+    // before();
+    var session = {
+        url: 'processor.php?action=delete&table=salary&sid='+ sid,
+        type: 'post',
+        data: jQuery.param({ sid : $('.delsalary').attr('id') }),
+        cache: false,
+        contentType: false,
+        processData: false,
+        beforeSend: before,
+        success: resp
+
+    };
+    $.ajax(session);
+});
+
+
 
 
 $('.addadmin').submit(function(e){
@@ -473,6 +495,162 @@ $('.editadmin').submit(function(e){
 
     };
     $.ajax(admininfo);
+});
+
+
+$('.addsalary').submit(function(e){
+
+    e.preventDefault();
+    // before();
+    var admininfo = {
+        url: 'processor.php?action=addsalary',
+        type: 'post',
+        data: new FormData(this),
+        cache: false,
+        contentType: false,
+        processData: false,
+        beforeSend: before,
+        success: resp
+
+    };
+    $.ajax(admininfo);
+});
+
+$('.editvisitor').submit(function(e){
+
+    e.preventDefault();
+    // before();
+    var visitor = {
+        url: 'processor.php?action=editvisit',
+        type: 'POST',
+        data: new FormData(this),
+        cache: false,
+        contentType: false,
+        processData: false,
+        beforeSend: before,
+        success: resp
+
+    };
+    $.ajax(visitor);
+});
+
+
+$('.editcustomer').submit(function(e){
+
+    e.preventDefault();
+    // before();
+    var visitor = {
+        url: 'processor.php?action=editcustom',
+        type: 'POST',
+        data: new FormData(this),
+        cache: false,
+        contentType: false,
+        processData: false,
+        beforeSend: before,
+        success: resp
+
+    };
+    $.ajax(visitor);
+});
+
+
+$('.editbooking').submit(function(e){
+
+    e.preventDefault();
+    // console.log("ssss");
+    // before();
+    var visitor = {
+        url: '/tms/processor.php?action=editbook',
+        type: 'POST',
+        data: new FormData(this),
+        cache: false,
+        contentType: false,
+        processData: false,
+        beforeSend: before,
+        success: resp
+
+    };
+    $.ajax(visitor);
+});
+
+$('.editeventeb').submit(function(e){
+
+    e.preventDefault();
+    // console.log("ssss");
+    // before();
+    var visitor = {
+        url: '/tms/processor.php?action=editevbook',
+        type: 'POST',
+        data: new FormData(this),
+        cache: false,
+        contentType: false,
+        processData: false,
+        beforeSend: before,
+        success: resp
+
+    };
+    $.ajax(visitor);
+});
+
+
+$('.editeventex').submit(function(e){
+
+    e.preventDefault();
+    // console.log("ssss");
+    // before();
+    var visitor = {
+        url: '/tms/processor.php?action=editevexecute',
+        type: 'POST',
+        data: new FormData(this),
+        cache: false,
+        contentType: false,
+        processData: false,
+        beforeSend: before,
+        success: resp
+
+    };
+    $.ajax(visitor);
+});
+
+
+
+$('.editsession').submit(function(e){
+
+    e.preventDefault();
+    // console.log("ssss");
+    // before();
+    var visitor = {
+        url: '/tms/processor.php?action=editsess',
+        type: 'POST',
+        data: new FormData(this),
+        cache: false,
+        contentType: false,
+        processData: false,
+        beforeSend: before,
+        success: resp
+
+    };
+    $.ajax(visitor);
+});
+
+
+$('.editstaff').submit(function(e){
+
+    e.preventDefault();
+    // console.log("ssss");
+    // before();
+    var visitor = {
+        url: '/tms/processor.php?action=editstaff',
+        type: 'POST',
+        data: new FormData(this),
+        cache: false,
+        contentType: false,
+        processData: false,
+        beforeSend: before,
+        success: resp
+
+    };
+    $.ajax(visitor);
 });
     
 })

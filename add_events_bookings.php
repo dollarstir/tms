@@ -26,6 +26,7 @@ $checker->mainchecker('/tms/login');
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <!-- Common Icon Ends -->
     <!-- Page Level Plugin/Style Starts -->
+    <link rel="stylesheet" type="text/css" href="common-assets/plugins/select2/select2.min.css">
     <link href="assets/css/forms/form-widgets.css" rel="stylesheet" type="text/css">
     <script src="common-assets/plugins/sweetalerts/promise-polyfill.js"></script>
     <link href="common-assets/plugins/sweetalerts/sweetalert2.min.css" rel="stylesheet" type="text/css" />
@@ -55,7 +56,7 @@ $checker->mainchecker('/tms/login');
     <!--  Main Container Starts  -->
     <div class="main-container" id="container">
         <!-- Logo area (Larger Screen) Starts -->
-        <?php include 'logo.php';?>
+        <?php include 'logo.php'; ?>
         <!-- Logo area (Larger Screen) Ends -->
         <div class="overlay"></div>
         <div class="search-overlay"></div>
@@ -63,7 +64,7 @@ $checker->mainchecker('/tms/login');
         <!--  Sidebar Starts  -->
         <div class="sidebar-wrapper sidebar-theme">
             <nav id="sidebar">
-            <?php include 'leftbar.php';?>
+            <?php include 'leftbar.php'; ?>
                 <?php include 'sidebar.php'; ?>
                 </div>
             </nav>
@@ -72,7 +73,7 @@ $checker->mainchecker('/tms/login');
         <!--  Content Area Starts  -->
         <div id="content" class="main-content">
             <!--  Navbar Starts  -->
-            <?php include 'topbar.php';?>
+            <?php include 'topbar.php'; ?>
             <!--  Navbar Ends / Breadcrumb Area  -->
             <!-- Main Body Starts -->
             <!-- <div class="layout-px-spacing">
@@ -323,7 +324,7 @@ $checker->mainchecker('/tms/login');
                                                         <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                                                             <br>
                                                             <div class="makeitSticky z">
-                                                                <h4>Events Booking</h4>
+                                                                <h4>Programme Booking</h4>
                                                             </div>
                                                             
                                                         </div>
@@ -332,7 +333,34 @@ $checker->mainchecker('/tms/login');
                                                 <div class="widget-content widget-content-area">
                                                     <div class="w-100">
                                                         <div class="mt-2">
-                                                            <input type="text" name="institution" placeholder="Name Of Institution"  class="form-control mb-3" /> 
+                                                            <div class="form-group row">
+                                                                <label class="col-3">Select Customer </label>
+                                                                <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12">
+                                                                    <select class="form-control placeholdercc select2-hidden-accessible" data-select2-id="15" tabindex="-1" aria-hidden="true" name="institution">
+                                                                        <option data-select2-id="16"></option>
+                                                                        <?php
+                                                                            $get = new Sel();
+                                                                            $response = $get->getall('customers');
+                                                                            foreach ($response as $row) {
+                                                                                echo'<option value="'.$row['id'].'">'.$row['organization'].' ('.$row['phone'].')</option>';
+                                                                            }
+                                                                        ?>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group row">
+                                                                <label class="col-3">Select programme Status </label>
+                                                                <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12">
+                                                                    <select class="form-control placeholdercca select2-hidden-accessible" data-select2-id="16" tabindex="-1" aria-hidden="true" name="estatus">
+                                                                        <option data-select2-id="16"></option>
+                                                                        <option value="Not started">Not started</option>
+                                                                        <option value="Started"> Started</option>
+                                                                        <option value="completed">Completed</option>
+                                                                        
+                                                                    </select>
+                                                                </div>
+                                                            </div>
                                                     <input type="text" name="title" placeholder="Title Of Program"  class="form-control mb-3" /> 
                                                     <div class="form-group row">
                                                         <label class="col-3">Residential Address</label>
@@ -873,6 +901,8 @@ $checker->mainchecker('/tms/login');
     <!-- Common Script Ends-->
     <!-- Page Level Plugin/Script Starts -->
     <script src="assets/js/forms/forms-layouts.js"></script>
+    <script src="common-assets/plugins/select2/select2.min.js"></script>
+    <script src="assets/js/forms/custom-select2.js"></script>   
     <script src="common-assets/plugins/sweetalerts/sweetalert2.min.js"></script>
     <script src="assets/js/basicui/sweet_alerts.js"></script>
     <!-- Page Level Plugin/Script Ends -->

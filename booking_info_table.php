@@ -210,7 +210,7 @@ $checker->mainchecker('/tms/login');
                                                             <td> '.$row['assigned'].'</td>
                                                             <td> '.$row['hyh'].'</td>
                                                             <td> '.$row['dateadded'].'</td>
-                                                            <td> <button  title="Edit" class="btn btn-secondary"><i class="las la-edit"></i> Edit</button> <button id="'.$row['id'].'"  class="btn btn-danger delbookinfo">Delete</button>  </td>
+                                                            <td> <a href="/tms/editbooking/'.$row['id'].'"  title="Edit" class="btn btn-secondary"><i class="las la-edit"></i> Edit</a> <button id="'.$row['id'].'"  class="btn btn-danger delbookinfo">Delete</button>  </td>
                                                             </tr>
                                                             
                                                             ';
@@ -238,12 +238,12 @@ $checker->mainchecker('/tms/login');
                                     </div>
                                    
             <!-- Main Body Ends -->
-            <div class="responsive-msg-component">
+            <!-- <div class="responsive-msg-component">
                 <p>
                     <a class="close-msg-component"><i class="las la-times"></i></a>
                     Please reload the page when you change the viewport size to view the responsive functionalities correctly
                 </p>
-            </div>
+            </div> -->
             <!-- Copyright Footer Starts -->
             <div class="footer-wrapper">
                 <div class="footer-section f-section-1">

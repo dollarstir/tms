@@ -2,7 +2,7 @@
 
 class Sel extends database
 {
-    public function select($table, $target, $conjunction = '',$limit='LIMIT 1')
+    public function select($table, $target, $conjunction = '',$limit='')
     {
         $vs = '';
         // $allval = []

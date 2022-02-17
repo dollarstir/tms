@@ -15,6 +15,10 @@ $(".placeholdercc").select2({
   placeholder: "Select customer from list",
 });
 
+$(".placeholdercca").select2({
+  placeholder: "Select programme status",
+});
+
 $(".placeholdertc").select2({
   placeholder: "Select type of counsellor",
 });

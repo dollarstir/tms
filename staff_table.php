@@ -9,7 +9,7 @@ $checker->mainchecker('/tms/login');
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>TUCEE Datatables | TUCEE - Multipurpose Bootstrap Admin Dashboard Template </title>
+    <title>TUCEE   Staff List</title>
     <link rel="icon" type="image/x-icon" href="common-assets/img/favicon.ico"/>
     <link href="assets/css/loader.css" rel="stylesheet" type="text/css" />
     <script src="assets/js/loader.js"></script>
@@ -85,7 +85,7 @@ $checker->mainchecker('/tms/login');
                                     <!-- Datatable with export options -->
                                      <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                                         <div class="widget-content widget-content-area br-6">
-                                            <h4 class="table-header">Staff Datatable</h4>
+                                            <h4 class="table-header">TUCEE STAFF </h4>
                                             <div class="table-responsive mb-4">
                                                 <table id="export-dt" class="table table-hover" style="width:100%">
                                                     <thead>
@@ -119,7 +119,7 @@ $checker->mainchecker('/tms/login');
                                                         <td>'.$row['jobtitle'].'</td>
                                                         <td>'.$row['datestarted'].'</td>
                                                         
-                                                        <td> <button  title="Edit" class="btn btn-secondary"><i class="las la-edit"></i> </button> <button title="delete" id="'.$row['id'].'"  class="btn btn-danger delstaff"><i class="las la-trash"></i></button>  </td>
+                                                        <td><a href="/tms/staff/'.$row['id'].'"  title="View" class="btn btn-primary"><i class="las la-eye"></i> </a> <a href="/tms/staffno/'.$row['id'].'"  title="Edit" class="btn btn-secondary"><i class="las la-edit"></i> </a> <button title="delete" id="'.$row['id'].'"  class="btn btn-danger delstaff"><i class="las la-trash"></i></button>  </td>
                                                         </tr>
                                                         
                                                         ';

@@ -205,7 +205,7 @@ $checker->mainchecker('/tms/login');
                                                             <td> '.$row['total'].'</td>
                                                             <td> '.$row['speaker'].'</td>
                                                             <td> '.$row['report'].'</td>
-                                                            <td> <button  title="Edit" class="btn btn-secondary"><i class="las la-edit"></i> Edit</button> <button id="'.$row['id'].'"  class="btn btn-danger delevntx"><i class="las la-trash"></i>Delete</button>  </td>
+                                                            <td> <a href="/tms/eventexecuted/'.$row['id'].'"  title="Edit" class="btn btn-secondary"><i class="las la-edit"></i> Edit</a> <button id="'.$row['id'].'"  class="btn btn-danger delevntx"><i class="las la-trash"></i>Delete</button>  </td>
                                                         </tr>
                                                                
                                                                ';

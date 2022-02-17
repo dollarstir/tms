@@ -54,8 +54,8 @@ $checker->mainchecker('/tms/login');
     <!--  Main Container Starts  -->
     <div class="main-container" id="container">
         <!-- Logo area (Larger Screen) Starts -->
-        <?php include 'logo.php';?>
-        </div>
+        <?php include 'logo.php'; ?>
+        
         <!-- Logo area (Larger Screen) Ends -->
         <div class="overlay"></div>
         <div class="search-overlay"></div>
@@ -63,7 +63,7 @@ $checker->mainchecker('/tms/login');
         <!--  Sidebar Starts  -->
         <div class="sidebar-wrapper sidebar-theme">
             <nav id="sidebar">
-            <?php include 'leftbar.php';?>
+            <?php include 'leftbar.php'; ?>
                 <?php include 'sidebar.php'; ?>
                 </div>
             </nav>
@@ -72,16 +72,16 @@ $checker->mainchecker('/tms/login');
         <!--  Content Area Starts  -->
         <div id="content" class="main-content">
             <!--  Navbar Starts  -->
-            <?php include 'topbar.php';?>
+            <?php include 'topbar.php'; ?>
             <!--  Navbar Ends / Breadcrumb Area  -->
             <!-- Main Body Starts -->
-            <!-- <div class="layout-px-spacing">
+            <div class="layout-px-spacing">
                 <div class="layout-top-spacing mb-2">
                     <div class="col-md-12">
                         <div class="row">
                             <div class="container p-0">
                                 <div class="row layout-top-spacing">
-                                    <div class="col-lg-6 layout-spacing">
+                                    <!--<div class="col-lg-6 layout-spacing">
                                         <div class="statbox widget box box-shadow mb-4">
                                             <div class="widget-header">
                                                 <div class="row">
@@ -332,14 +332,21 @@ $checker->mainchecker('/tms/login');
                                                 <div class="widget-content widget-content-area">
                                                     <div class="w-100">
                                                         <div class="mt-2">
+
+                                                        <div class="form-group row">
+                                                                <label class="col-3">Name of organisation</label>
+                                                                <div class="col-9">
+                                                                    <input class="form-control form-control-solid" type="text" name="organization" >
+                                                                </div>
+                                                            </div>
                                                             <div class="form-group row">
-                                                                <label class="col-3">First Name</label>
+                                                                <label class="col-3"> Contact person First Name</label>
                                                                 <div class="col-9">
                                                                     <input class="form-control form-control-solid" type="text" name="fname" >
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
-                                                                <label class="col-3">Last Name</label>
+                                                                <label class="col-3">Contact person Last Name</label>
                                                                 <div class="col-9">
                                                                     <input class="form-control form-control-solid" type="text" name="lname" >
                                                                 </div>
@@ -380,27 +387,42 @@ $checker->mainchecker('/tms/login');
                                                                     <input class="form-control form-control-solid" type="text" placeholder="Remarks">
                                                                 </div>
                                                             </div> -->
-                                                            <div class="row">
+                                                                <!-- <div class="row">
                                                                     <div class="col-md-2 align-center d-flex"> 
                                                                         <label class="pay mb-0">Employment Status</label> 
                                                                     </div>
                                                                     <div class="col-md-10"> 
                                                                         <select class="list-dt" id="month" name="empstatus">
                                                                             <option value="">Employment status</option>
-                                                                            <option value="Worker">Worker</option>
-                                                                            <option value="Employee">Employee</option>
+                                                                            <option value="Worker">Student</option>
+                                                                            <option value="Employee">Employed</option>
                                                                             <option value="Self">Self-employed</option>
+                                                                            <option value="Self">Unemployed</option>
 
                                                                             
                                                                         </select> 
-                                                                        <!-- <select class="list-dt" id="year" name="expyear">
-                                                                            <option selected>Year</option>
-                                                                        </select>  -->
+                                                                        
                                                                     </div>
                                                                 </div>
-                                                                <br>
+                                                                <br> -->
                                                                 <input type="text" name="jobtitle" placeholder="Job Title"  class="form-control mb-3" /> 
-                                                                <input type="text" name="hedu" placeholder="highest Education"  class="form-control mb-3" /> 
+                                                                                <!-- <div class="row">
+                                                                                    <div class="col-md-2 align-center d-flex"> 
+                                                                                        <label class="pay mb-0">Highest Education</label> 
+                                                                                    </div>
+                                                                                    <div class="col-md-10"> 
+                                                                                        <select class="list-dt" id="month" name="hedu">
+                                                                                        <option value="">Select Highest Education</option>
+                                                                                            <option value="Pre-Tertiary">Pre-Tertiary</option>
+                                                                                            <option value="Bachelor's">Bachelor's</option>
+                                                                                            <option value="Masters">Masters</option>
+                                                                                            <option value="Doctorate">Doctorate</option>
+                                                                                            
+                                                                                        </select> 
+                                                                                        
+                                                                                    </div>
+                                                                                </div>
+                                                                                <br> -->
 
                                                                 <div class="row">
                                                                     <div class="col-md-2 align-center d-flex"> 

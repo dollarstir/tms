@@ -1,4 +1,4 @@
-DirectoryIndex york.php
+DirectoryIndex engine.php
 
 # enable apache rewrite engine
 RewriteEngine on
@@ -12,4 +12,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
  
 # Push every request to index.php
-RewriteRule ^(.*)$ tms/york.php [QSA]
+RewriteRule ^(.*)$ tms/engine.php [QSA]

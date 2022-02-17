@@ -58,7 +58,7 @@ $checker->mainchecker('/tms/login');
     <!--  Main Container Starts  -->
     <div class="main-container" id="container">
         <!-- Logo area (Larger Screen) Starts -->
-        <?php include 'logo.php';?>
+        <?php include 'logo.php'; ?>
         <!-- Logo area (Larger Screen) Ends -->
         <div class="overlay"></div>
         <div class="search-overlay"></div>
@@ -66,7 +66,7 @@ $checker->mainchecker('/tms/login');
         <!--  Sidebar Starts  -->
         <div class="sidebar-wrapper sidebar-theme">
             <nav id="sidebar">
-                <?php include 'leftbar.php';?>
+                <?php include 'leftbar.php'; ?>
                 <?php include 'sidebar.php'; ?>
                 </div>
             </nav>
@@ -75,7 +75,7 @@ $checker->mainchecker('/tms/login');
         <!--  Content Area Starts  -->
         <div id="content" class="main-content">
             <!--  Navbar Starts  -->
-            <?php include 'topbar.php';?>
+            <?php include 'topbar.php'; ?>
             <!--  Navbar Ends  -->
             <!--  Navbar Starts / Breadcrumb Area  -->
             <div class="sub-header-container">
@@ -223,7 +223,25 @@ $checker->mainchecker('/tms/login');
                                                                                 </div>
                                                                                 <input type="text" name="disorder" placeholder="Any Disability"  class="form-control mb-3" />
                                                                                 <h5 class="fs-title mb-4">Educational Information</h5>
-                                                                                <input type="text" name="hedu" placeholder="Highest Education"  class="form-control mb-3" /> 
+                                                                                <div class="row">
+                                                                                    <div class="col-md-2 align-center d-flex"> 
+                                                                                        <label class="pay mb-0">Highest Education</label> 
+                                                                                    </div>
+                                                                                    <div class="col-md-10"> 
+                                                                                        <select class="list-dt" id="month" name="hedu">
+                                                                                        <option value="">Select Highest Education</option>
+                                                                                            <option value="Pre-Tertiary">Pre-Tertiary</option>
+                                                                                            <option value="Bachelor's">Bachelor's</option>
+                                                                                            <option value="Masters">Masters</option>
+                                                                                            <option value="Doctorate">Doctorate</option>
+                                                                                            
+                                                                                        </select> 
+                                                                                        <!-- <select class="list-dt" id="year" name="expyear">
+                                                                                            <option selected>Year</option>
+                                                                                        </select>  -->
+                                                                                    </div>
+                                                                                </div>
+                                                                                <br>
                                                                                 <input type="text" name="hinstitute" placeholder="Institutioin"  class="form-control mb-3" /> 
                                                                                 <input type="text" name="program" placeholder="Program Studied"  class="form-control mb-3" /> 
                                                                                 <div class="row">

@@ -12,11 +12,11 @@ class database extends Config
         // }
 
         try {
-            $this->conn = new PDO('mysql:host=localhost;dbname=tms', 'root', '');
+            $this->conn = new PDO('mysql:host='.$this->db_host.';dbname='.$this->db_name.'', ''.$this->db_user.'', ''.$this->db_pass.'');
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
-            echo 'ERROR: '.$e->getMessage();
-            var_dump($this->conn);
+            echo '<h1 style="color:red;">ERROR: Failed to connect  Database</h1>';
+            // var_dump($this->conn);
         }
     }
 }

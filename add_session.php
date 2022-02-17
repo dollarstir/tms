@@ -55,7 +55,7 @@ $checker->mainchecker('/tms/login');
     <!--  Main Container Starts  -->
     <div class="main-container" id="container">
         <!-- Logo area (Larger Screen) Starts -->
-        <?php include 'logo.php';?> 
+        <?php include 'logo.php'; ?> 
         <!-- Logo area (Larger Screen) Ends -->
         <div class="overlay"></div>
         <div class="search-overlay"></div>
@@ -63,7 +63,7 @@ $checker->mainchecker('/tms/login');
         <!--  Sidebar Starts  -->
         <div class="sidebar-wrapper sidebar-theme">
             <nav id="sidebar">
-            <?php include 'leftbar.php';?>
+            <?php include 'leftbar.php'; ?>
                 <?php include 'sidebar.php'; ?>
                 </div>
             </nav>
@@ -72,7 +72,7 @@ $checker->mainchecker('/tms/login');
         <!--  Content Area Starts  -->
         <div id="content" class="main-content">
             <!--  Navbar Starts  -->
-            <?php include 'topbar.php';?>
+            <?php include 'topbar.php'; ?>
             <!--  Navbar Ends  -->
             <!--  Navbar Starts / Breadcrumb Area  -->
             <div class="sub-header-container">
@@ -352,17 +352,16 @@ $checker->mainchecker('/tms/login');
                                                 <div class="widget-content widget-content-area">
                                                     <div class="w-100">
                                                         <div class="mt-2">
-                                                        <div class="form-group row">
+                                                            <div class="form-group row">
                                                                 <label class="col-3">Select Customer </label>
                                                                 <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12">
                                                                     <select class="form-control placeholdercc select2-hidden-accessible" data-select2-id="15" tabindex="-1" aria-hidden="true" name="cid">
                                                                         <option data-select2-id="16"></option>
                                                                         <?php
                                                                             $get = new Sel();
-                                                                            $response=$get->getall('customers');
-                                                                            foreach($response as $row){
+                                                                            $response = $get->getall('customers');
+                                                                            foreach ($response as $row) {
                                                                                 echo'<option value="'.$row['id'].'">'.$row['name'].' ('.$row['phone'].')</option>';
-
                                                                             }
                                                                         ?>
                                                                     </select>

@@ -25,13 +25,13 @@ echo '<ul class="list-unstyled menu-categories" id="accordionExample">
                     <li class="menu">
                         <a href="javascript:void(0);" id="otherPages" class="main-item dropdown-toggle">
                             <i class="las la-file"></i>
-                            <span>Customer info</span>
+                            <span>Customers</span>
                         </a>
                     </li>
                     <li class="menu">
                         <a href="javascript:void(0);" id="basicUI" class="main-item dropdown-toggle">
                             <i class="las la-pen"></i>
-                            <span>Booking Info</span>
+                            <span>Clients Bookings</span>
                         </a>
                     </li>
                     <li class="menu">
@@ -40,31 +40,31 @@ echo '<ul class="list-unstyled menu-categories" id="accordionExample">
                             <span>Session</span>
                         </a>
                     </li>
-                    <!-- <li class="menu">
+                    <li class="menu">
                         <a href="javascript:void(0);" id="forms" class="main-item dropdown-toggle">
                             <i class="lab la-wpforms"></i>
-                            <span>Forms</span>
+                            <span>Clients</span>
                         </a>
-                    </li> -->
+                    </li>
                     <li class="menu">
                         <a href="javascript:void(0);" id="maps" class="main-item dropdown-toggle">
                             <i class="las la-globe-americas"></i>
-                            <span>Events Executed</span>
+                            <span>Programs Executed</span>
                         </a>
                     </li>
                     <li class="menu">
                         <a href="javascript:void(0);" id="charts" class="main-item dropdown-toggle">
                             <i class="las la-chart-pie"></i>
-                            <span>Event Booking</span>
+                            <span>Programme Bookings</span>
                         </a>
                     </li>
-                    <!-- <li class="menu">
+                     <!--<li class="menu">
                         <a href="widgets.html" class="dropdown-toggle">
                             <i class="las la-desktop"></i>
-                            <span>Widgets</span>
+                            <span>Clients</span>
                         </a>
-                    </li>
-                    <li class="menu">
+                    </li>-->
+                    <!--<li class="menu">
                         <a href="tables.html" class="dropdown-toggle">
                             <i class="las la-border-all"></i>
                             <span>Tables</span>
@@ -392,102 +392,28 @@ echo '<ul class="list-unstyled menu-categories" id="accordionExample">
                             </ul>
                         </div>
                     </div>
-                    <!-- <div class="submenu" id="formsMenu">
+                    <div class="submenu" id="formsMenu">
                         <div class="submenu-info">
                             <div class="submenu-inner-info">
-                                <h5 class="mb-3">Forms</h5>
+                                <h5 class="mb-3">Client </h5>
                                 
                             </div>
                             <ul class="submenu-list">
+                                
+                                
                                 <li>
-                                    <a data-toggle="collapse" href="index.php#formControls" role="button" aria-expanded="false" aria-controls="collapseExample" class="dropdown-toggle">
-                                    Controls <i class="las la-angle-right sidemenu-right-icon"></i>
-                                    </a>
-                                    <ul class="sub-submenu-list collapse" id="formControls"> 
-                                        <li>
-                                            <a href="forms_controls_base_input.html"> Base Input </a>
+                                            <a href="/tms/newclient"> Add Client </a>
                                         </li>
                                         <li>
-                                            <a href="forms_controls_input_groups.html"> Input Groups </a>
+                                            <a href="/tms/clients">View Clients </a>
                                         </li>
-                                        <li>
-                                            <a href="forms_controls_checkbox.html"> Checkbox </a>
-                                        </li>
-                                        <li>
-                                            <a href="forms_controls_radio.html"> Radio </a>
-                                        </li>
-                                        <li>
-                                            <a href="forms_controls_switch.html"> Switch </a>
-                                        </li>
-                                    </ul>
-                                </li>
                                 <li>
-                                    <a data-toggle="collapse" href="index.php#formWidgets" role="button" aria-expanded="false" aria-controls="collapseExample" class="dropdown-toggle">
-                                    Widgets <i class="las la-angle-right sidemenu-right-icon"></i>
-                                    </a>
-                                    <ul class="sub-submenu-list collapse" id="formWidgets"> 
-                                        <li>
-                                            <a href="forms_widgets_picker.html"> Picker </a>
-                                        </li>
-                                        <li>
-                                            <a href="forms_widgets_tagify.html"> Tagify </a>
-                                        </li>
-                                        <li>
-                                            <a href="forms_widgets_touch_spin.html"> Touch Spin </a>
-                                        </li>
-                                        <li>
-                                            <a href="forms_widgets_maxlength.html"> Max Length </a>
-                                        </li>
-                                        <li>
-                                            <a href="forms_widgets_switch.html"> Switch </a>
-                                        </li>
-                                        <li>
-                                            <a href="forms_widgets_select_splitter.html"> Select Splitter</a>
-                                        </li>
-                                        <li>
-                                            <a href="forms_widgets_bootstrap_select.html"> Bootstrap Select </a>
-                                        </li>
-                                        <li>
-                                            <a href="forms_widgets_select_2.html"> Select 2 </a>
-                                        </li>
-                                        <li>
-                                            <a href="forms_widgets_input_masks.html"> Input Masks </a>
-                                        </li>
-                                        <li>
-                                            <a href="forms_widgets_autogrow.html"> Autogrow </a>
-                                        </li>
-                                        <li>
-                                            <a href="forms_widgets_range_slider.html"> Range Slider </a>
-                                        </li>
-                                        <li>
-                                            <a href="forms_widgets_clipboard.html"> Clipboard </a>
-                                        </li>
-                                        <li>
-                                            <a href="forms_widgets_typeahead.html"> Typeahead </a>
-                                        </li>
-                                        <li>
-                                            <a href="forms_widgets_captcha.html"> Captcha </a>
-                                        </li>
-                                    </ul>
+                                    <a href="/tms/newintake"> Client Intake form </a>
                                 </li>
-                                <li>
-                                    <a href="forms_validation.html"> Validation </a>
-                                </li>
-                                <li>
-                                    <a href="forms_layouts.html"> Layouts </a>
-                                </li>
-                                <li>
-                                    <a href="forms_text_editor.html"> Text Editor </a>
-                                </li>
-                                <li>
-                                    <a href="forms_file_upload.html"> File Upload </a>
-                                </li>
-                                <li>
-                                    <a href="forms_multiple_step.html"> Multiple Step </a>
-                                </li>
+                                
                             </ul>
                         </div>
-                    </div> -->
+                    </div> 
                     <div class="submenu" id="mapsMenu">
                         <div class="submenu-info">
                             <div class="submenu-inner-info">
@@ -638,13 +564,13 @@ echo '<ul class="list-unstyled menu-categories" id="accordionExample">
                             <span>Event Booking</span>
                         </a>
                     </li>
-                    <!-- <li class="menu">
+                    <li class="menu">
                         <a href="widgets.html" class="dropdown-toggle">
                             <i class="las la-desktop"></i>
                             <span>Widgets</span>
                         </a>
                     </li>
-                    <li class="menu">
+                   <!-- <li class="menu">
                         <a href="tables.html" class="dropdown-toggle">
                             <i class="las la-border-all"></i>
                             <span>Tables</span>
@@ -859,7 +785,7 @@ echo '<ul class="list-unstyled menu-categories" id="accordionExample">
                         <div class="submenu-info">
                             <div class="submenu-inner-info">
                                 <h5 class="mb-3">Costumer Info>
-                                <p>Nor again is there anyone who loves or pursues.</p>
+                               
                             </div>
                             <ul class="submenu-list"> 
                                 <li>
@@ -953,8 +879,8 @@ echo '<ul class="list-unstyled menu-categories" id="accordionExample">
                     <div class="submenu" id="basicUIMenu">
                         <div class="submenu-info">
                             <div class="submenu-inner-info">
-                                <h5 class="mb-3">Booking Info</h5>
-                                <p>At vero eos et accusamus et iusto odio.</p>
+                                <h5 class="mb-3">Client Booking</h5>
+                               
                             </div>
                             <ul class="submenu-list"> 
                                 <li>

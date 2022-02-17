@@ -17,7 +17,7 @@ $lname = $name[1];
 say(
     '<div class="fixed-profile">
     <div class="premium-border">
-        <img src="upload/'.$man[0]['pic'].'" class="profile-avatar"/>
+        <img src="/tms/upload/'.$man[0]['pic'].'" class="profile-avatar"/>
     </div>
     <div class="mt-3">
         <h6 class="text-white font-14 mb-1"></h6>
