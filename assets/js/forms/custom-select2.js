@@ -19,6 +19,14 @@ $(".placeholdercca").select2({
   placeholder: "Select programme status",
 });
 
+$(".placeholdercl").select2({
+  placeholder: "Select client from list",
+});
+
+$(".placeholdermos").select2({
+  placeholder: "Select mode of session",
+});
+
 $(".placeholdertc").select2({
   placeholder: "Select type of counsellor",
 });

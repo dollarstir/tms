@@ -142,7 +142,7 @@ $checker->mainchecker('/tms/login');
                                                 <i class="las la-pen"></i>
                                             </span>
                                         </div>
-                                        <h5 class="font-size-14 mb-0">Bookings</h5>
+                                        <h5 class="font-size-14 mb-0">Client Bookings</h5>
                                     </div>
                                     <div class="text-muted mt-3">
                                         <center><h5 class="mb-2"><?php echo $counter->countall('bookings');  ?>
@@ -179,11 +179,11 @@ $checker->mainchecker('/tms/login');
                                                 <i class="lab la-elementor"></i>
                                             </span>
                                         </div>
-                                        <h5 class="font-size-14 mb-0">Sessions</h5>
+                                        <h5 class="font-size-14 mb-0">Clients</h5>
                                     </div>
                                     <div class="text-muted mt-3">
                                        <center> <h5 class="mb-2">
-                                            <?php echo $counter->countall('sessions');  ?>
+                                            <?php echo $counter->countall('clients');  ?>
                                             
                                         </h5></center>
                                         
@@ -209,7 +209,7 @@ $checker->mainchecker('/tms/login');
                                                 <i class="las la-pen"></i>
                                             </span>
                                         </div>
-                                        <h5 class="font-size-14 mb-0">Event Booked</h5>
+                                        <h5 class="font-size-14 mb-0">Programme Bookings</h5>
                                     </div>
                                     <div class="text-muted mt-3">
                                         <center><h5 class="mb-2"><?php echo $counter->countall('eventb');  ?>
@@ -246,7 +246,7 @@ $checker->mainchecker('/tms/login');
                                                 <i class="lab la-elementor"></i>
                                             </span>
                                         </div>
-                                        <h5 class="font-size-14 mb-0">Event Executed</h5>
+                                        <h5 class="font-size-14 mb-0">Programmes Executed</h5>
                                     </div>
                                     <div class="text-muted mt-3">
                                        <center> <h5 class="mb-2">

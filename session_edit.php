@@ -331,7 +331,7 @@ $checker->mainchecker('/tms/login');
                                        $r= $g->select('sessions',[['id','=',$data[0]]]);
                                        $cid = $r[0]['cid'];
 
-                                       $c = $g->select('customers', [['id', '=',$cid]]);
+                                       $c = $g->select('clients', [['id', '=',$cid]]);
                                     //    var_dump($c);
 
 
@@ -354,14 +354,14 @@ $checker->mainchecker('/tms/login');
                                                     <div class="w-100">
                                                         <div class="mt-2">
                                                         <div class="form-group row">
-                                                                <label class="col-3">Select Customer </label>
+                                                                <label class="col-3">Select Client </label>
                                                                 <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12">
                                                                     <select class="form-control placeholdercc select2-hidden-accessible" data-select2-id="15" tabindex="-1" aria-hidden="true" name="cid">
                                                                         <!-- <option data-select2-id="16"></option> -->
                                                                         <option value="<?php say($c[0]['id']);?>"><?php say($c[0]['name'].' ('.$c[0]['phone'].')');?></option>
                                                                         <?php
                                                                             $get = new Sel();
-                                                                            $response=$get->getall('customers');
+                                                                            $response=$get->getall('clients');
                                                                             foreach($response as $row){
                                                                                 echo'<option value="'.$row['id'].'">'.$row['name'].' ('.$row['phone'].')</option>';
 

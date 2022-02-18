@@ -87,6 +87,7 @@ if (isset($_GET['action'])) {
                 'bookdate' => $bookdate,
                 'booktime' => $booktime,
                 'toc' => $toc,
+                'mos' => $mos,
                 'assigned' => $assigned,
                 'hyh' => $hyh,
                 'dateadded' => date('jS F, Y'), ]
@@ -395,6 +396,7 @@ echo $response = $add->insert('eventb',
                     'bookdate' => $bookdate,
                     'booktime' => $booktime,
                     'toc' => $toc,
+                    'mos' => $mos,
                     'assigned' => $assigned,
                     'hyh' => $hyh,
                 ], 'id='.$id);
@@ -420,6 +422,7 @@ echo $response = $add->insert('eventb',
                         'cpname' => $cpname,
                         'cpaddress' => $cpaddress,
                         'cpcontact' => $cpcontact,
+                        'estatus'=> $estatus,
                     ], 'id='.$id);
 
                     break;

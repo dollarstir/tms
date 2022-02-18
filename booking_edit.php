@@ -322,7 +322,7 @@ $checker->mainchecker('/tms/login');
                                        $r= $g->select('bookings',[['id','=',$data[0]]]);
                                        $cid = $r[0]['cid'];
 
-                                       $c = $g->select('customers', [['id', '=',$cid]]);
+                                       $c = $g->select('clients', [['id', '=',$cid]]);
                                     //    var_dump($c);
 
 
@@ -346,17 +346,17 @@ $checker->mainchecker('/tms/login');
                                                     <div class="w-100">
                                                         <div class="mt-2">
                                                             <div class="form-group row">
-                                                                <label class="col-3">Select Customer</label>
+                                                                <label class="col-3">Select Client</label>
                                                                 
                                                             
                                                                 <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12">
-                                                                    <select class="form-control placeholdercc select2-hidden-accessible" data-select2-id="14" tabindex="-1" aria-hidden="true" name="cid">
+                                                                    <select class="form-control placeholdercl select2-hidden-accessible" data-select2-id="14" tabindex="-1" aria-hidden="true" name="cid">
                                                                         <!-- <option data-select2-id="16"></option> -->
                                                                         <option value="<?php say($c[0]['id']);?>"><?php say($c[0]['name'].' ('.$c[0]['phone'].')');?></option>
                                                                        
                                                                         <?php
                                                                         $fc = new Sel();
-                                                                        $result = $fc->getall('customers');
+                                                                        $result = $fc->getall('clients');
                                                                         foreach ($result as $row) {
                                                                             echo '<option value="'.$row['id'].'">'.$row['name'].' ('.$row['phone'].')</option>';
                                                                             
@@ -391,6 +391,21 @@ $checker->mainchecker('/tms/login');
                                                                         <option value="AF">Afghanistan</option>
                                                                         <option value="BS">Bahamas</option>
                                                                         <option value="KH">Cambodia</option>
+                                                                        
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <br>
+
+
+                                                            <div class="form-group row">
+                                                                <label class="col-3">Mode of Counselling</label>
+                                                                <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12">
+                                                                    <select class="form-control placeholdermos select2-hidden-accessible" data-select2-id="16" tabindex="-1" aria-hidden="true" name="mos">
+                                                                        <option value="<?php say($r[0]['mos']);?>"><?php say($r[0]['mos']);?></option>
+                                                                        <option value="face-to-face">Face-to-face</option>
+                                                                        <option value="Cyber">Cyber</option>
+                                                                       
                                                                         
                                                                     </select>
                                                                 </div>

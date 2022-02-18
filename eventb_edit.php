@@ -12,7 +12,7 @@ $checker->mainchecker('/tms/login');
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>TUCEE - Edit Event Booking </title>
+    <title>TUCEE - Edit Programme Booking </title>
     <link rel="icon" type="image/x-icon" href="/tms/common-assets/img/favicon.ico"/>
     <link href="/tms/assets/css/loader.css" rel="stylesheet" type="text/css" />
     <script src="/tms/assets/js/loader.js"></script>
@@ -321,9 +321,9 @@ $checker->mainchecker('/tms/login');
                                     <?php
                                         $g = new Sel();
                                        $r= $g->select('eventb',[['id','=',$data[0]]]);
-                                    //    $cid = $r[0]['cid'];
+                                       $cid = $r[0]['institution'];
 
-                                    //    $c = $g->select('customers', [['id', '=',$cid]]); 
+                                       $c = $g->select('customers', [['id', '=',$cid]]); 
                                     //    var_dump($c);
 
 
@@ -344,15 +344,42 @@ $checker->mainchecker('/tms/login');
                                                     </div>
                                                 </div>
                                                 <div class="widget-content widget-content-area">
-                                                <label class="col-3">Name of Institution</label>
+                                                    <!-- <label class="col-3">Name of Institution</label> -->
                                                     <div class="w-100">
-                                                        <div class="mt-2">
-                                                            <input type="text" name="institution" placeholder="Name Of Institution"  class="form-control mb-3"  value="<?php say($r[0]['institution']);?>"/> 
-                                                            <label class="col-3">Title of Programe</label>
-                                                    <input type="text" name="title" placeholder="Title Of Program"  class="form-control mb-3" value="<?php say($r[0]['title']);?>" /> 
-                                                    <input type="hidden" name="id" placeholder="Title Of Program"  class="form-control mb-3" value="<?php say($r[0]['id']);?>" /> 
-                                                    <label class="col-3">Residential Address</label>
+                                                    <div class="mt-2">
                                                     <div class="form-group row">
+                                                                <label class="col-3">Select Customer </label>
+                                                                <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12">
+                                                                    <select class="form-control placeholdercc select2-hidden-accessible" data-select2-id="15" tabindex="-1" aria-hidden="true" name="institution">
+                                                                        <option value="<?php say($c[0]['id']);?>"><?php say($c[0]['organization'].' ('.$c[0]['phone'].')');?></option>
+                                                                        <?php
+                                                                            $get = new Sel();
+                                                                            $response = $get->getall('customers');
+                                                                            foreach ($response as $row) {
+                                                                                echo'<option value="'.$row['id'].'">'.$row['organization'].' ('.$row['phone'].')</option>';
+                                                                            }
+                                                                        ?>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group row">
+                                                                <label class="col-3">Select programme Status </label>
+                                                                <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12">
+                                                                    <select class="form-control placeholdercca select2-hidden-accessible" data-select2-id="16" tabindex="-1" aria-hidden="true" name="estatus">
+                                                                        <option value="<?php say($r[0]['estatus']);?>"><?php say($r[0]['estatus']);?></option>
+                                                                        <option value="Not started">Not started</option>
+                                                                        <option value="Started"> Started</option>
+                                                                        <option value="completed">Completed</option>
+                                                                        
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <label class="col-3">Title of Programe</label>
+                                                             <input type="text" name="title" placeholder="Title Of Program"  class="form-control mb-3" value="<?php say($r[0]['title']);?>" /> 
+                                                                <input type="hidden" name="id" placeholder="Title Of Program"  class="form-control mb-3" value="<?php say($r[0]['id']);?>" /> 
+                                                                <label class="col-3">Residential Address</label>
+                                                                <div class="form-group row">
                                                        
                                                         <div class="col-9">
                                                             <input class="form-control form-control-solid" type="text" placeholder="P.O. Box 283 8562 Fusce Rd." name="address" value="<?php say($r[0]['address']);?>">

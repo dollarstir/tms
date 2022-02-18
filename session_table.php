@@ -90,7 +90,7 @@ $checker->mainchecker('/tms/login');
                                                 <table id="export-dt" class="table table-hover" style="width:100%">
                                                     <thead>
                                                         <tr>
-                                                            <th>Customer</th>
+                                                            <th>Client</th>
                                                             <th>Contact</th>
                                                             <th>Address</th>
                                                             <th>Presenting Issue</th>
@@ -111,7 +111,7 @@ $checker->mainchecker('/tms/login');
                                                             $all =  $tb->getall("sessions");
                                                             foreach ($all as $row){
                                                                 $cid = $row['cid'];
-                                                                $c = $tb->select("customers",
+                                                                $c = $tb->select("clients",
                                                                 [
                                                                     ['id','=',$cid]
                                                                 ]);
@@ -141,7 +141,7 @@ $checker->mainchecker('/tms/login');
                                                     </tbody>
                                                     <tfoot>
                                                         <tr>
-                                                        <th>Customer</th>
+                                                        <th>Client</th>
                                                             <th>Contact</th>
                                                             <th>Address</th>
                                                             <th>Presenting Issue</th>

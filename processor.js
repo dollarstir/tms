@@ -142,6 +142,24 @@ $('.addcustomer').submit(function(e){
         $.ajax(customers);
 });
 
+$('.addclient').submit(function(e){
+
+    e.preventDefault();
+    // before();
+    var customers = {
+        url: 'processor.php?action=addclient',
+        type: 'post',
+        data: new FormData(this),
+        cache: false,
+        contentType: false,
+        processData: false,
+        beforeSend: before,
+        success: resp
+
+    };
+    $.ajax(customers);
+});
+
 
 
 $('.adbooking').submit(function(e){
@@ -370,6 +388,27 @@ $('.delcustomer').click(function(e){
     $.ajax(session);
 });
 
+$('.delclient').click(function(e){
+
+    e.preventDefault();
+    var id = this.id;
+    var sid = this.id;
+    // alert(id);
+    // before();
+    var session = {
+        url: 'processor.php?action=delete&table=clients&sid='+ sid,
+        type: 'post',
+        data: jQuery.param({ sid : $('.delclient').attr('id') }),
+        cache: false,
+        contentType: false,
+        processData: false,
+        beforeSend: before,
+        success: resp
+
+    };
+    $.ajax(session);
+});
+
 
 $('.deladmin').click(function(e){
 
@@ -541,6 +580,25 @@ $('.editcustomer').submit(function(e){
     // before();
     var visitor = {
         url: 'processor.php?action=editcustom',
+        type: 'POST',
+        data: new FormData(this),
+        cache: false,
+        contentType: false,
+        processData: false,
+        beforeSend: before,
+        success: resp
+
+    };
+    $.ajax(visitor);
+});
+
+
+$('.editclient').submit(function(e){
+
+    e.preventDefault();
+    // before();
+    var visitor = {
+        url: 'processor.php?action=editclient',
         type: 'POST',
         data: new FormData(this),
         cache: false,

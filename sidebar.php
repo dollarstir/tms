@@ -417,15 +417,15 @@ echo '<ul class="list-unstyled menu-categories" id="accordionExample">
                     <div class="submenu" id="mapsMenu">
                         <div class="submenu-info">
                             <div class="submenu-inner-info">
-                                <h5 class="mb-3">Events Executed</h5>
+                                <h5 class="mb-3">Programme Executed</h5>
                                
                             </div>
                             <ul class="submenu-list">
                                 <li>
-                                    <a href="/tms/executedevents"> Add Event Executed </a>
+                                    <a href="/tms/executedevents"> Add programme Executed </a>
                                 </li>
                                 <li>
-                                    <a href="/tms/eventx"> View Event Executed </a>
+                                    <a href="/tms/eventx"> View programme Executed </a>
                                 </li>
                             </ul>
                         </div>
@@ -433,15 +433,15 @@ echo '<ul class="list-unstyled menu-categories" id="accordionExample">
                     <div class="submenu" id="chartsMenu">
                         <div class="submenu-info">
                             <div class="submenu-inner-info">
-                                <h5 class="mb-3">Events Booking</h5>
+                                <h5 class="mb-3">Programmes Booking</h5>
                                
                             </div>
                             <ul class="submenu-list">
                                 <li>
-                                    <a href="/tms/eventbookings"> Add Events Booking </a>
+                                    <a href="/tms/eventbookings"> Add programme Booking </a>
                                 </li>
                                 <li>
-                                    <a href="/tms/eventb"> View Events Booking </a>
+                                    <a href="/tms/eventb"> View programme Booking </a>
                                 </li>  
                                 <!-- <li>
                                     <a href="charts_chartjs.html"> ChartJS </a>

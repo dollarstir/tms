@@ -92,12 +92,13 @@ $checker->mainchecker('/tms/login');
                                                 <table id="export-dt" class="table table-hover" style="width:100%">
                                                     <thead>
                                                         <tr>
-                                                            <th> Customer Name</th>
+                                                            <th> Client Name</th>
                                                             <th>Contact</th>
                                                             <th>Address</th>
                                                             <th>Booked on</th>
                                                             <th>Time Booked</th>
                                                             <th>Counselling Needed</th>
+                                                            <th>Mode of Section</th>
                                                             <th>Assigned Counsellor</th>
                                                             <th> Referral</th>
                                                             <th> Date recorded</th>
@@ -105,87 +106,7 @@ $checker->mainchecker('/tms/login');
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <!-- <tr>
-                                                            <td>Tiger Nixon</td>
-                                                            <td>System Architect</td>
-                                                            <td>Edinburgh</td>
-                                                            <td>61</td>
-                                                            <td>2011/04/25</td>
-                                                            <td>$320,800</td>
-                                                            <td><a href="datatables.html#" title="Edit" class="font-20 text-primary"><i class="las la-edit"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                            <td><a href="datatables.html#" title="Edit" class="font-20 text-primary"><i class="las la-edit"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Ashton Cox</td>
-                                                            <td>Junior Technical Author</td>
-                                                            <td>San Francisco</td>
-                                                            <td>66</td>
-                                                            <td>2009/01/12</td>
-                                                            <td>$86,000</td>
-                                                            <td><a href="datatables.html#" title="Edit" class="font-20 text-primary"><i class="las la-edit"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Cedric Kelly</td>
-                                                            <td>Senior Javascript Developer</td>
-                                                            <td>Edinburgh</td>
-                                                            <td>22</td>
-                                                            <td>2012/03/29</td>
-                                                            <td>$433,060</td>
-                                                            <td><a href="datatables.html#" title="Edit" class="font-20 text-primary"><i class="las la-edit"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Airi Satou</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>33</td>
-                                                            <td>2008/11/28</td>
-                                                            <td>$162,700</td>
-                                                            <td><a href="datatables.html#" title="Edit" class="font-20 text-primary"><i class="las la-edit"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Brielle Williamson</td>
-                                                            <td>Integration Specialist</td>
-                                                            <td>New York</td>
-                                                            <td>61</td>
-                                                            <td>2012/12/02</td>
-                                                            <td>$372,000</td>
-                                                            <td><a href="datatables.html#" title="Edit" class="font-20 text-primary"><i class="las la-edit"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Herrod Chandler</td>
-                                                            <td>Sales Assistant</td>
-                                                            <td>San Francisco</td>
-                                                            <td>59</td>
-                                                            <td>2012/08/06</td>
-                                                            <td>$137,500</td>
-                                                            <td><a href="datatables.html#" title="Edit" class="font-20 text-primary"><i class="las la-edit"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Rhona Davidson</td>
-                                                            <td>Integration Specialist</td>
-                                                            <td>Tokyo</td>
-                                                            <td>55</td>
-                                                            <td>2010/10/14</td>
-                                                            <td>$327,900</td>
-                                                            <td><a href="datatables.html#" title="Edit" class="font-20 text-primary"><i class="las la-edit"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Colleen Hurst</td>
-                                                            <td>Javascript Developer</td>
-                                                            <td>San Francisco</td>
-                                                            <td>39</td>
-                                                            <td>2009/09/15</td>
-                                                            <td>$205,500</td>
-                                                            <td><a href="datatables.html#" title="Edit" class="font-20 text-primary"><i class="las la-edit"></i></a></td>
-                                                        </tr> -->
+                                                       
                                                         <?php
 
                                                             $tb = new Sel();
@@ -193,7 +114,7 @@ $checker->mainchecker('/tms/login');
 
                                                             foreach ($all as $row) {
                                                                 $id = $row['cid'];
-                                                                $cc = $tb->select('customers', [['id', '=', $id]]);
+                                                                $cc = $tb->select('clients', [['id', '=', $id]]);
                                                                 // foreach ($cc as $rc) {
                                                                 // }
                                                                 $cname = $cc[0]['name'];
@@ -207,6 +128,7 @@ $checker->mainchecker('/tms/login');
                                                             <td>'.$row['bookdate'].'</td>
                                                             <td>'.$row['booktime'].'</td>
                                                             <td>'.$row['toc'].'</td>
+                                                            <td>'.$row['mos'].'</td>
                                                             <td> '.$row['assigned'].'</td>
                                                             <td> '.$row['hyh'].'</td>
                                                             <td> '.$row['dateadded'].'</td>
@@ -220,12 +142,13 @@ $checker->mainchecker('/tms/login');
                                                     </tbody>
                                                     <tfoot>
                                                         <tr>
-                                                        <th> Customer Name</th>
+                                                        <th> Client Name</th>
                                                             <th>Contact</th>
                                                             <th>Address</th>
                                                             <th>Booked on</th>
                                                             <th>Time Booked</th>
                                                             <th>Counselling Needed</th>
+                                                            <th>Mode of Section</th>
                                                             <th>Assigned Counsellor</th>
                                                             <th> Referral</th>
                                                             <th> Date recorded</th>

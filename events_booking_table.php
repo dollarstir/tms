@@ -86,7 +86,7 @@ $checker->mainchecker('/tms/login');
                                     <!-- Datatable with export options -->
                                      <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                                         <div class="widget-content widget-content-area br-6">
-                                            <h4 class="table-header">Events Booking Datatable</h4>
+                                            <h4 class="table-header">Programme Booking Datatable</h4>
                                             <div class="table-responsive mb-4">
                                                 <table id="export-dt" class="table table-hover" style="width:100%">
                                                     <thead>
@@ -95,6 +95,7 @@ $checker->mainchecker('/tms/login');
                                                             <th>Title</th>
                                                             <th>Address</th>
                                                             <th>Program</th>
+                                                            <th>Status</th>
                                                             <th>Requested on</th>
                                                             <th>Implemented on</th>
                                                             <th>Resource Person</th>
@@ -114,12 +115,18 @@ $checker->mainchecker('/tms/login');
                                                             $tb = new Sel();
                                                            $all = $tb->getall('eventb');
                                                            foreach ($all as $row) {
+                                                            $id = $row['institution'];
+                                                            $cc = $tb->select('customers', [['id', '=', $id]]);
+                                                            // foreach ($cc as $rc) {
+                                                            // }
+                                                            $cname = $cc[0]['organization'];
                                                                echo '
                                                                <tr>
-                                                            <td>'.$row['institution'].'</td>
+                                                            <td>'.$cname.'</td>
                                                             <td>'.$row['title'].'</td>
                                                             <td>'.$row['address'].'</td>
                                                             <td>'.$row['program'].'</td>
+                                                            <td>'.$row['estatus'].'</td>
                                                             <td>'.$row['requestdate'].'</td>
                                                             <td>'.$row['implementeddate'].'</td>
                                                             <td> '.$row['resourceperson'].'</td>
@@ -142,6 +149,7 @@ $checker->mainchecker('/tms/login');
                                                             <th>Title</th>
                                                             <th>Address</th>
                                                             <th>Program</th>
+                                                            <th>Status</th>
                                                             <th>Requested on</th>
                                                             <th>Implemented on</th>
                                                             <th>Resource Person</th>

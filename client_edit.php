@@ -9,7 +9,7 @@ $checker->mainchecker('/tms/login');
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>TUCEE  | Add Client - </title>
+    <title>TUCEE  | Edit Clients - </title>
     <link rel="icon" type="image/x-icon" href="common-assets/img/favicon.ico"/>
     <link href="assets/css/loader.css" rel="stylesheet" type="text/css" />
     <script src="assets/js/loader.js"></script>
@@ -54,7 +54,7 @@ $checker->mainchecker('/tms/login');
     <!--  Main Container Starts  -->
     <div class="main-container" id="container">
         <!-- Logo area (Larger Screen) Starts -->
-        <?php include 'logo.php'; ?>
+        <?php include 'logo.php';?>
         
         <!-- Logo area (Larger Screen) Ends -->
         <div class="overlay"></div>
@@ -63,7 +63,7 @@ $checker->mainchecker('/tms/login');
         <!--  Sidebar Starts  -->
         <div class="sidebar-wrapper sidebar-theme">
             <nav id="sidebar">
-            <?php include 'leftbar.php'; ?>
+            <?php include 'leftbar.php';?>
                 <?php include 'sidebar.php'; ?>
                 </div>
             </nav>
@@ -72,7 +72,7 @@ $checker->mainchecker('/tms/login');
         <!--  Content Area Starts  -->
         <div id="content" class="main-content">
             <!--  Navbar Starts  -->
-            <?php include 'topbar.php'; ?>
+            <?php include 'topbar.php';?>
             <!--  Navbar Ends / Breadcrumb Area  -->
             <!-- Main Body Starts -->
             <div class="layout-px-spacing">
@@ -315,15 +315,22 @@ $checker->mainchecker('/tms/login');
                                             </div>
                                         </div> 
                                     </div> -->
+                                    <?php
+                                        $g = new Sel();
+                                       $r= $g->select('Clients',[['id','=',$_GET['id']]]);
+
+
+
+                                    ?>
                                     <div class="col-lg-12 layout-spacing">
                                         <div class="statbox widget box box-shadow mb-4">
-                                            <form class="addclient">
+                                            <form class="editclient">
                                                 <div class="widget-header">
                                                     <div class="row">
                                                         <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                                                             <br>
                                                             <div class="makeitSticky z">
-                                                                <h4>Add Client Info</h4>
+                                                              <center>  <h4>Edit Client  <?php say($r[0]['name']);?> record</h4></center>
                                                             </div>
                                                         
                                                         </div>
@@ -332,25 +339,19 @@ $checker->mainchecker('/tms/login');
                                                 <div class="widget-content widget-content-area">
                                                     <div class="w-100">
                                                         <div class="mt-2">
-
-                                                            <!-- <div class="form-group row">
-                                                                <label class="col-3">Name of organisation</label>
+                                                            <!-- <label class="col-3">Organization Name</label>
+                                                            <div class="form-group row">
                                                                 <div class="col-9">
-                                                                    <input class="form-control form-control-solid" type="text" name="organization" >
+                                                                    <input class="form-control form-control-solid" type="text" name="organization" value="<?php say($r[0]['organization']);?>" >
                                                                 </div>
                                                             </div> -->
+                                                            <label class="col-3">Client Name</label>
                                                             <div class="form-group row">
-                                                                <label class="col-3"> Client's First Name</label>
                                                                 <div class="col-9">
-                                                                    <input class="form-control form-control-solid" type="text" name="fname" >
+                                                                    <input class="form-control form-control-solid" type="text" name="name" value="<?php say($r[0]['name']);?>" >
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group row">
-                                                                <label class="col-3">Client's Last Name</label>
-                                                                <div class="col-9">
-                                                                    <input class="form-control form-control-solid" type="text" name="lname" >
-                                                                </div>
-                                                            </div>
+                                                            
                                                             
                                                             <div class="row">
                                                                 <div class="col-md-2 align-center d-flex"> 
@@ -358,7 +359,8 @@ $checker->mainchecker('/tms/login');
                                                                 </div>
                                                                 <div class="col-md-10"> 
                                                                     <select class="list-dt" id="month" name="gender">
-                                                                    <option value="">Gender</option>    
+                                                                    <!-- <option value="">Gender</option>    -->
+                                                                    <option value="<?php say($r[0]['gender']);?>"><?php say($r[0]['gender']);?></option> 
                                                                     <option value="male">Male</option>
                                                                         <option value="female">Female</option>
                                                                         
@@ -387,13 +389,15 @@ $checker->mainchecker('/tms/login');
                                                                     <input class="form-control form-control-solid" type="text" placeholder="Remarks">
                                                                 </div>
                                                             </div> -->
+
+                                                            
                                                                 <div class="row">
                                                                     <div class="col-md-2 align-center d-flex"> 
                                                                         <label class="pay mb-0">Employment Status</label> 
                                                                     </div>
                                                                     <div class="col-md-10"> 
                                                                         <select class="list-dt" id="month" name="empstatus">
-                                                                            <option value="">Employment status</option>
+                                                                            <option value="<?php say($r[0]['empstatus']);?>"><?php say($r[0]['empstatus']);?></option>
                                                                             <option value="student">Student</option>
                                                                             <option value="Employed">Employed</option>
                                                                             <option value="Self-employed">Self-employed</option>
@@ -405,14 +409,17 @@ $checker->mainchecker('/tms/login');
                                                                     </div>
                                                                 </div>
                                                                 <br>
-                                                                <input type="text" name="jobtitle" placeholder="Job Title"  class="form-control mb-3" /> 
-                                                                                <div class="row">
+                                                               
+                                                                <label class="col-3">Job title</label>
+                                                                <input type="text" name="jobtitle" placeholder="Job Title"  class="form-control mb-3" value="<?php say($r[0]['jobtitle']);?>"/> 
+
+                                                                <div class="row">
                                                                                     <div class="col-md-2 align-center d-flex"> 
                                                                                         <label class="pay mb-0">Highest Education</label> 
                                                                                     </div>
                                                                                     <div class="col-md-10"> 
                                                                                         <select class="list-dt" id="month" name="hedu">
-                                                                                        <option value="">Select Highest Education</option>
+                                                                                        <option value="<?php say($r[0]['hedu']);?>"><?php say($r[0]['hedu']);?></option>
                                                                                             <option value="Pre-Tertiary">Pre-Tertiary</option>
                                                                                             <option value="Bachelor's">Bachelor's</option>
                                                                                             <option value="Masters">Masters</option>
@@ -423,6 +430,8 @@ $checker->mainchecker('/tms/login');
                                                                                     </div>
                                                                                 </div>
                                                                                 <br>
+                                                                <!-- <label class="col-3">Highest Education</label> -->
+                                                                <!-- <input type="text" name="hedu" placeholder="highest Education"  class="form-control mb-3" value=""/>  -->
 
                                                                 <div class="row">
                                                                     <div class="col-md-2 align-center d-flex"> 
@@ -430,7 +439,7 @@ $checker->mainchecker('/tms/login');
                                                                     </div>
                                                                     <div class="col-md-10"> 
                                                                         <select class="list-dt" id="month" name="mstatus">
-                                                                            <option value="">Marital status</option>
+                                                                            <option value="<?php say($r[0]['mstatus']);?>"><?php say($r[0]['mstatus']);?></option>
                                                                             <option value="single">Single</option>
                                                                             <option value="married">Married</option>
                                                                             <option value="divorced">Divorced</option>
@@ -444,17 +453,19 @@ $checker->mainchecker('/tms/login');
                                                                 </div>
                                                                 <br>
                                                                 <!-- <input type="text" name="relation" placeholder="Marital Status"  class="form-control mb-3" />  -->
+                                                                <label class="col-3">Residential Address</label>
                                                                 <div class="form-group row">
-                                                                    <label class="col-3">Residential Address</label>
+                                                                   
                                                                     <div class="col-9">
-                                                                        <input class="form-control form-control-solid" type="text" placeholder="P.O. Box 283 8562 Fusce Rd." name="address">
+                                                                        <input class="form-control form-control-solid" type="text" placeholder="P.O. Box 283 8562 Fusce Rd." name="address" value="<?php say($r[0]['address']);?>">
                                                                     </div>
                                                                 </div>
+                                                                <label class="col-3">Phone Number</label>
                                                                 <div class="input-group mb-3">
                                                                     <div class="input-group-prepend">
                                                                         <span class="input-group-text"><i class="las la-phone-volume font-17"></i></span>
                                                                     </div>
-                                                                    <input type="text" name="phone" placeholder="Contact No."  class="form-control" /> 
+                                                                    <input type="text" name="phone" placeholder="Contact No."  class="form-control" value="<?php say($r[0]['phone']);?>"/> 
                                                                 </div>
                                                             <!-- <div class="form-group row">
                                                                 <label class="col-3">Phone</label>
@@ -470,8 +481,9 @@ $checker->mainchecker('/tms/login');
                                                                     <span class="form-text text-muted">Don't include your country code.</span>
                                                                 </div>
                                                             </div> -->
+                                                            <label class="col-3">Email Address</label>
                                                             <div class="form-group row">
-                                                                <label class="col-3">Email Address</label>
+                                                               
                                                                 <div class="col-9">
                                                                     <div class="input-group input-group-solid">
                                                                         <div class="input-group-prepend">
@@ -479,7 +491,7 @@ $checker->mainchecker('/tms/login');
                                                                                 <i class="la la-at"></i>
                                                                             </span>
                                                                         </div>
-                                                                        <input type="text" class="form-control form-control-solid"  placeholder="Email" name="email">
+                                                                        <input type="text" class="form-control form-control-solid"  placeholder="Email" name="email" value="<?php say($r[0]['email']);?>">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -497,26 +509,32 @@ $checker->mainchecker('/tms/login');
                                                             </div> -->
                                                             <div class="form-card">
                                                                 <h5 class="fs-title mb-4">Emergency Contact</h5>
-                                                                <input type="text" name="efname" placeholder="First Name"  class="form-control mb-3" /> 
-                                                                <input type="text" name="elname" placeholder="Last Name"  class="form-control mb-3" /> 
-                                                                <input type="text" name="erelation" placeholder="Relation"  class="form-control mb-3" /> 
+                                                                <label class="col-3">Full name</label>
+                                                                <input type="text" name="ename" placeholder="Full Name"  class="form-control mb-3"  value="<?php say($r[0]['ename']);?>"/> 
+                                                                
+                                                                <input type="hidden" name="id" placeholder=""  class="form-control mb-3"  value="<?php say($r[0]['id']);?>"/> 
+                                                                <label class="col-3">Relation</label>
+                                                                <input type="text" name="erelation" placeholder="Relation"  class="form-control mb-3" value="<?php say($r[0]['erelation']);?>"/> 
+                                                                <label class="col-3">Residential Address</label>
                                                                 <div class="form-group row">
-                                                                    <label class="col-3">Residential Address</label>
+                                                                    
                                                                     <div class="col-9">
-                                                                        <input class="form-control form-control-solid" type="text" placeholder="P.O. Box 283 8562 Fusce Rd." name="eaddress">
+                                                                        <input class="form-control form-control-solid" type="text" placeholder="P.O. Box 283 8562 Fusce Rd." name="eaddress" value="<?php say($r[0]['eaddress']);?>">
                                                                     </div>
                                                                 </div>
+                                                                <label class="col-3">Phone Number</label>
                                                                 <div class="input-group mb-3">
                                                                     <div class="input-group-prepend">
                                                                         <span class="input-group-text"><i class="las la-phone-volume font-17"></i></span>
                                                                     </div>
-                                                                    <input type="text" name="econt1" placeholder="Contact No."  class="form-control" /> 
+                                                                    <input type="text" name="econt1" placeholder="Contact No."  class="form-control"  value="<?php say($r[0]['econt1']);?>"/> 
                                                                 </div>
+                                                                <label class="col-3">Alternate Number</label>
                                                                 <div class="input-group mb-3">
                                                                     <div class="input-group-prepend">
                                                                         <span class="input-group-text"><i class="las la-phone font-17"></i></span>
                                                                     </div>
-                                                                    <input type="text" name="econt2" placeholder="Alternate Contact No." class="form-control" />
+                                                                    <input type="text" name="econt2" placeholder="Alternate Contact No." class="form-control" value="<?php say($r[0]['econt2']);?>"/>
                                                                 </div>
                                                             <!-- <div class="form-group row">
                                                                 <label class="col-3">City</label>

@@ -353,13 +353,13 @@ $checker->mainchecker('/tms/login');
                                                     <div class="w-100">
                                                         <div class="mt-2">
                                                             <div class="form-group row">
-                                                                <label class="col-3">Select Customer </label>
+                                                                <label class="col-3">Select Client </label>
                                                                 <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12">
-                                                                    <select class="form-control placeholdercc select2-hidden-accessible" data-select2-id="15" tabindex="-1" aria-hidden="true" name="cid">
+                                                                    <select class="form-control placeholdercl select2-hidden-accessible" data-select2-id="15" tabindex="-1" aria-hidden="true" name="cid">
                                                                         <option data-select2-id="16"></option>
                                                                         <?php
                                                                             $get = new Sel();
-                                                                            $response = $get->getall('customers');
+                                                                            $response = $get->getall('clients');
                                                                             foreach ($response as $row) {
                                                                                 echo'<option value="'.$row['id'].'">'.$row['name'].' ('.$row['phone'].')</option>';
                                                                             }

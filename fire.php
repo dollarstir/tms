@@ -64,6 +64,14 @@ $router->route('tms/newbooking', function () {
     return view('/add_booking_info.php');
 });
 
+$router->route('tms/newclient', function () {
+    return view('/add_client.php');
+});
+
+$router->route('tms/clients', function () {
+    return view('/client_info_table.php');
+});
+
 $router->route('tms/newsession', function () {
     return view('/add_session.php');
 });

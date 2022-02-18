@@ -324,7 +324,7 @@ $checker->mainchecker('/tms/login');
                                                         <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                                                             <br>
                                                             <div class="makeitSticky z">
-                                                                <h4>Booking Info</h4>
+                                                                <h4>Client Booking Info</h4>
                                                             </div>
                                                             
                                                         </div>
@@ -334,13 +334,13 @@ $checker->mainchecker('/tms/login');
                                                     <div class="w-100">
                                                         <div class="mt-2">
                                                             <div class="form-group row">
-                                                                <label class="col-3">Select Customer</label>
+                                                                <label class="col-3">Select Client</label>
                                                                 <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12">
-                                                                    <select class="form-control placeholdercc select2-hidden-accessible" data-select2-id="14" tabindex="-1" aria-hidden="true" name="cid">
+                                                                    <select class="form-control placeholdercl select2-hidden-accessible" data-select2-id="14" tabindex="-1" aria-hidden="true" name="cid">
                                                                         <option data-select2-id="16"></option>
                                                                         <?php
                                                                         $fc = new Sel();
-                                                                        $result = $fc->getall('customers');
+                                                                        $result = $fc->getall('clients');
                                                                         foreach ($result as $row) {
                                                                             echo '<option value="'.$row['id'].'">'.$row['name'].' ('.$row['phone'].')</option';
                                                                         }
@@ -364,13 +364,27 @@ $checker->mainchecker('/tms/login');
                                                             </div>
                                                             
                                                             <div class="form-group row">
-                                                                <label class="col-3">Type of Counselor</label>
+                                                                <label class="col-3">Counselling Need</label>
                                                                 <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12">
                                                                     <select class="form-control placeholdertc select2-hidden-accessible" data-select2-id="15" tabindex="-1" aria-hidden="true" name="toc">
                                                                         <option data-select2-id="16"></option>
                                                                         <option value="AF">Afghanistan</option>
                                                                         <option value="BS">Bahamas</option>
                                                                         <option value="KH">Cambodia</option>
+                                                                        
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <br>
+
+                                                            <div class="form-group row">
+                                                                <label class="col-3">Mode of Counselling</label>
+                                                                <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12">
+                                                                    <select class="form-control placeholdermos select2-hidden-accessible" data-select2-id="16" tabindex="-1" aria-hidden="true" name="mos">
+                                                                        <option data-select2-id="16"></option>
+                                                                        <option value="face-to-face">Face-to-face</option>
+                                                                        <option value="Cyber">Cyber</option>
+                                                                       
                                                                         
                                                                     </select>
                                                                 </div>
