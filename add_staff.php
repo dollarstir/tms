@@ -149,7 +149,7 @@ $checker->mainchecker('/tms/login');
                                                                                     </div>
                                                                                     <input type="number" name="contact2" placeholder="Alternate Contact No." class="form-control" />
                                                                                 </div>
-                                                                                <input type="number" name="ssnt" placeholder="SSNT"  class="form-control mb-3" />
+                                                                                <input type="text" name="ssnt" placeholder="SSNT"  class="form-control mb-3" />
                                                                                 <div class="form-group row">
                                                                                     <label class="col-3">Date Of Birth</label>
                                                                                     <div class="col-9">
